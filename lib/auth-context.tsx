@@ -19,6 +19,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   useEffect(() => {
+    if (!auth) {
+      setLoading(false);
+      return;
+    }
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
@@ -27,12 +31,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const login = async (email: string, pass: string) => {
+    if (!auth) throw new Error('Firebase admin is not configured');
     await signInWithEmailAndPassword(auth, email, pass);
     router.push('/admin/dashboard');
   };
 
   const logout = async () => {
-    await signOut(auth);
+    if (auth) await signOut(auth);
     router.push('/');
   };
 
