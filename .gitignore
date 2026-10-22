@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local design and QA artifacts
+/audit-current/
+/qa-*
+/design-*
+/design-qa.md
+/portfolio-research.md
+/yarn.lock
