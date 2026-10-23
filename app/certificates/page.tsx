@@ -7,7 +7,7 @@ export default function Certificates() {
       <section className="certificate-index">
         {certificates.map((certificate) => (
           <article key={certificate.id}>
-            <span>{certificate.id}</span><div><p>{certificate.area}</p><h2>{certificate.note}</h2></div><small>{certificate.status}</small>
+            <span>{certificate.id}</span><div><p>{certificate.area}</p><h2>{certificate.note}</h2><a href={certificate.area === "IJIRT" ? "https://ijirt.org/publishedpaper/IJIRT199344_PAPER.pdf" : "https://www.linkedin.com/in/bilal-sabugar/"} target="_blank" rel="noreferrer">{certificate.area === "IJIRT" ? "Read original publication ↗" : "View professional profile ↗"}</a></div><small>{certificate.status}</small>
           </article>
         ))}
       </section>

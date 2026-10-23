@@ -4,7 +4,6 @@ export const portfolioData = {
     role: "Robotics engineer · CTO & Co-founder",
     statement: "I build machines that leave the screen.",
     summary: "Robotics, embedded systems, AI and product engineering—brought together to turn an ambitious idea into a working physical system.",
-    location: "Ahmedabad, India",
     availability: "Available for select freelance and R&D projects",
     email: "bilal.07.04.07@gmail.com",
     linkedinUrl: "https://www.linkedin.com/in/bilal-sabugar/",
@@ -59,7 +58,7 @@ export const portfolioData = {
     { number: "04", title: "Technical R&D", text: "Focused experiments for founders and teams who need to reduce uncertainty before committing to a full build." },
   ],
   proof: [
-    { value: "CTO", label: "Co-founder, Aetheron Labs", note: "Robotics and mechatronics R&D in Ahmedabad" },
+    { value: "CTO", label: "Co-founder, Aetheron Labs", note: "Robotics and mechatronics R&D" },
     { value: "18", label: "Degrees of freedom", note: "Designed into the Novexa hexapod" },
     { value: "2026", label: "Published research", note: "3D-printed hexapod for all-terrain locomotion" },
     { value: "2025–29", label: "B.Tech", note: "Computer Science, AI & Robotics at ATLAS SkillTech University" },

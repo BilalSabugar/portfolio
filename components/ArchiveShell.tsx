@@ -16,7 +16,7 @@ export function ArchiveShell({
     <div className="archive-shell">
       <header className="archive-header">
         <Link href="/" className="archive-back"><ArrowLeft size={16} /> Back to portfolio</Link>
-        <Link href="/#hire" className="archive-contact">Hire Bilal <ArrowRight size={15} /></Link>
+        <Link href="/#contact" className="archive-contact">Discuss a project <ArrowRight size={15} /></Link>
       </header>
       <main>
         <section className="archive-hero">

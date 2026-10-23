@@ -5,7 +5,7 @@ import { blogPosts } from "@/lib/site-content";
 
 export default function BlogPage() {
   return (
-    <ArchiveShell eyebrow="Writing archive · 03" title="Ideas made useful." intro="Short, practical writing about the decisions behind reliable software, intelligent systems, and complete products.">
+    <ArchiveShell eyebrow="Research archive" title="Design, fabrication and research." intro="A summary of the Novexa development work, with the original publication available for technical detail.">
       <section className="article-index">
         {blogPosts.map((post, index) => (
           <Link href={`/blog/${post.slug}`} key={post.slug}>

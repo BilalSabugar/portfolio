@@ -163,7 +163,7 @@ function Scene(props: Props) {
 
 export default function LivingSculpture(props: Props) {
   return (
-    <Canvas camera={{ position: [0, 0.72, 5.7], fov: 39 }} dpr={[1, 1.6]} gl={{ antialias: true, alpha: true }}>
+    <Canvas fallback={<p className="scene-fallback">3D is unavailable. Explore the same work using the chapter navigation.</p>} camera={{ position: [0, 0.72, 5.7], fov: 39 }} dpr={[1, 1.6]} gl={{ antialias: true, alpha: true }}>
       <Scene {...props} />
     </Canvas>
   );
