@@ -43,7 +43,7 @@ html { scroll-behavior:smooth; scroll-padding-top:110px; }
 .exhibit-toolbar [role=tablist] { display:flex; gap:4px; }
 .exhibit-toolbar button { padding:7px 10px; background:transparent; border:0; color:var(--subtle); font-size:10px; }
 .exhibit-toolbar button[aria-selected=true] { color:var(--paper); background:#ffffff12; }
-.exhibit-media { position:relative; overflow:hidden; aspect-ratio:1.2; background:#b3b3b3; }
+.exhibit-media { position:relative; overflow:hidden; aspect-ratio:1.55; background:#b3b3b3; }
 .exhibit-frame { position:absolute; inset:0; }
 .exhibit-frame img { object-fit:contain; }
 .exhibit-media-0 img { object-fit:contain; }
