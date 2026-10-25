@@ -20,6 +20,15 @@ Local screenshots (ignored by Git) include `qa-rebuild-home.png`, `qa-rebuild-mo
 
 ## Limits and follow-through
 
+### Contribution and enquiry refinement
+
+- GitHub Pages production-mode build and TypeScript compilation passed. Targeted ESLint check passed for all changed TSX and content modules.
+- Export checks passed for 22 public HTML pages and 16 sitemap URLs, plus six case-study contribution/scope/context checks and four homepage enquiry links.
+- Browser: Software filter plus RoboScout query returned one case. Opening that case and its enquiry link retained the RoboScout reference. The homepage hiring link preselected hiring. Hiring, research and company options each displayed their matching guidance.
+- Empty form submission identified name, email and message as invalid. No draft was sent and email delivery was not tested. The prepared-draft copy fallback is implemented but was not exercised with a submitted test message.
+- Desktop (1440 px) and mobile (390 px) home/work/contact states were inspected. Checked mobile work and contact document widths remained within the viewport. Enquiry options precede the supporting services on mobile.
+- React review removed effect-driven URL-to-state copying; contact query parameters are read under a Suspense boundary and initialise a keyed enquiry form. This also handles navigation between enquiry contexts without stale form state.
+
 - No field Core Web Vitals data, Search Console ownership, actual Google index coverage, assistive-technology session or independent usability study was available. The strategy document's performance values are targets, not achieved measurements.
 - Sources were public GitHub files/API, the original IJIRT PDF, the company website and an indexed LinkedIn profile result. Direct LinkedIn page access was blocked; the credential is not independently issuer-verified. No certificate image or public CV was fabricated.
 - Code and research are presented with source context; external project benchmark claims were not independently reproduced. AI-assisted development disclosures were preserved for RoboScout and OSRS.

@@ -12,6 +12,7 @@ export const links = {
 export type Work = {
   slug: string; number: string; title: string; category: "Robotics" | "Software";
   label: string; summary: string; question: string; role: string; context: string;
+  contribution: string; evidence: string; takeaway: string;
   status: string; stack: string[]; repository: string; source: string;
   image?: string; imageAlt?: string; imageCaption?: string;
   decisions: { title: string; text: string }[];
@@ -22,9 +23,12 @@ export const works: Work[] = [
   {
     slug: "novexa", number: "01", title: "Novexa", category: "Robotics",
     label: "Hexapod · Aetheron Labs / team project",
-    summary: "A six-legged robot that brings mechanical design, fabrication and coordinated movement into one platform.",
+    summary: "An 18-joint hexapod built from a modular, 3D-printed structure, servo-driven legs and an Arduino-based control system.",
+    contribution: "Mechanical design, fabrication & integration",
+    evidence: "Physical prototype · CAD files · Journal paper",
+    takeaway: "Taking a robot from CAD to a physical assembly means designing around the parts, joints and wiring that must work together.",
     question: "How do you make eighteen joints work as one machine?",
-    role: "Mechanical design, structural fabrication and mechatronic integration within the project team.",
+    role: "I contributed to the mechanical design, structural fabrication and mechatronic integration: the work connecting the printed structure, actuators and electronics into one assembly.",
     context: "Developed with Aditya Jadav, Archie Veera and Rabinder Henry, with ATLAS SkillTech University laboratory resources. The open project is now hosted by Aetheron Labs.",
     status: "Experimental prototype", stack: ["Fusion 360", "3D printing", "Arduino Mega", "Inverse kinematics"],
     repository: "https://github.com/Labs-Aetheron/Novexa", source: "https://github.com/Labs-Aetheron/Novexa/blob/main/README.md",
@@ -41,9 +45,12 @@ export const works: Work[] = [
   {
     slug: "osrs", number: "02", title: "OSRS", category: "Robotics",
     label: "Robot control · Collaborative platform",
-    summary: "A shared platform for robot control, perception, simulation and live telemetry.",
+    summary: "A robotics platform that connects hardware, camera feedback, simulation and a live control dashboard for repeatable experiments.",
+    contribution: "Platform engineering & online system identification",
+    evidence: "Source code · Experiment guides · Technical report",
+    takeaway: "A useful robotics experiment needs more than a controller: it needs connected hardware, visible data and a way to repeat the test.",
     question: "How do you connect an experiment, its hardware and the data needed to understand it?",
-    role: "Platform engineering, RLS identification and full-stack robotics, as credited in the project's AUTHORS.md.",
+    role: "My credited responsibilities cover platform engineering, full-stack robotics and recursive least squares (RLS) identification—a method for estimating system behaviour from incoming data.",
     context: "Core engineering team: Bilal Sabugar, Aditya Jadav and Archie Veera. The work connects robot hardware, perception modules and MuJoCo simulation through a common software platform.",
     status: "Open-source research platform", stack: ["Python", "FastAPI", "React", "MuJoCo", "OpenCV", "Dynamixel"],
     repository: "https://github.com/TeamOSRS/OSRS", source: "https://github.com/TeamOSRS/OSRS/blob/main/AUTHORS.md",
@@ -61,9 +68,12 @@ export const works: Work[] = [
   {
     slug: "roboscout", number: "03", title: "RoboScout", category: "Software",
     label: "Engineering research · Open source",
-    summary: "A workstation for tracing engineering requirements through component research, calculations and reports.",
+    summary: "An engineering research tool that connects component selection to source documents, torque calculations and reviewable reports.",
+    contribution: "Product direction & engineering workflow design",
+    evidence: "Application source · Architecture · Sizing routines",
+    takeaway: "AI can help gather engineering information, but calculations and source checks need explicit rules that a person can inspect.",
     question: "How can engineering research stay traceable when AI is part of the workflow?",
-    role: "Project direction and engineering workflow design, developed with AI coding agents as disclosed in the repository.",
+    role: "I directed the project and its engineering workflow: how requirements lead to component research, calculations and reports. AI coding agents produced the implementation, as disclosed in the repository.",
     context: "An independently maintained public software project connecting robotics requirements with source material and explicit calculations.",
     status: "Public software project", stack: ["Next.js", "TypeScript", "Prisma", "SQLite", "SerpApi"],
     repository: "https://github.com/BilalSabugar/RoboScout", source: "https://github.com/BilalSabugar/RoboScout/blob/master/ARCHITECTURE.md",
@@ -78,9 +88,12 @@ export const works: Work[] = [
   },
   {
     slug: "wirk", number: "04", title: "WIRK", category: "Software", label: "Productivity · Community edition",
-    summary: "A local workspace combining task flow, focus sessions, reflection and a bring-your-own-key AI assistant.",
+    summary: "A browser-based workspace that keeps task planning, focus sessions and a private journal together, with an optional AI assistant.",
+    contribution: "Independent community-edition project",
+    evidence: "Application source · Local storage · Import / export",
+    takeaway: "Planning, doing and reviewing work belong in one workflow; an AI assistant is optional rather than a requirement for the core tools.",
     question: "How do plans, focused work and reflection stay connected?",
-    role: "Independent software project maintained through Bilal's public repository.",
+    role: "WIRK is my independent software project. This case covers the open-source community edition: task management, focus sessions, journal storage and optional AI assistance.",
     context: "WIRK's community edition runs in the browser. The public repository is the scope of this case study; separately advertised cloud services are not treated as demonstrated here.",
     status: "Open-source community edition", stack: ["React", "Vite", "Web Crypto", "Browser storage"],
     repository: "https://github.com/BilalSabugar/wirk-opensource", source: "https://github.com/BilalSabugar/wirk-opensource/blob/main/README.md",
@@ -94,9 +107,12 @@ export const works: Work[] = [
   },
   {
     slug: "recoveros", number: "05", title: "RecoverOS", category: "Software", label: "Decision systems · Prototype",
-    summary: "A revenue-recovery prototype that separates predictions from policy checks and verified outcomes.",
+    summary: "A payment-recovery prototype that checks proposed retry actions against policy rules and records outcomes only after gateway confirmation.",
+    contribution: "Independent decision-system prototype",
+    evidence: "Source code · Synthetic evaluations · Test-mode flow",
+    takeaway: "A recommendation is not permission to act, and an attempted payment is not recovered revenue. The system keeps those states separate.",
     question: "When a system recommends an action, what is allowed to execute it?",
-    role: "Independent prototype maintained in Bilal's public repository.",
+    role: "RecoverOS is my independent prototype exploring how recommendations, execution rules and payment records should fit together. The public work includes the application, policy checks and synthetic evaluation scripts.",
     context: "A software exploration of recovery decisions, deterministic policy enforcement and transaction-state verification. Evaluation uses synthetic payment failures.",
     status: "Simulation and test-mode prototype", stack: ["Python", "FastAPI", "React", "SQLAlchemy", "Razorpay test mode"],
     repository: "https://github.com/BilalSabugar/RECOVEROS", source: "https://github.com/BilalSabugar/RECOVEROS/blob/main/README.md",
@@ -110,16 +126,19 @@ export const works: Work[] = [
   },
   {
     slug: "calm-pulse", number: "06", title: "Calm Pulse", category: "Software", label: "Wellness app · Team prototype",
-    summary: "A cross-platform prototype for journaling, wellness tracking and AI-assisted conversation.",
+    summary: "A mobile wellness prototype combining mood and sleep tracking, journaling, breathing exercises and AI-assisted conversation.",
+    contribution: "Back-end development within a four-person team",
+    evidence: "React Native app source · Credited team roles",
+    takeaway: "The app supports several everyday activities rather than making a chatbot the entire experience.",
     question: "How can everyday wellness tools fit into a small, accessible application?",
-    role: "Back-end developer, credited alongside Sidharth Lama in the public README.",
+    role: "I worked on back-end development alongside Sidharth Lama. Riyaan Sheth and Nandani Singh coordinated the project. These are the roles recorded in the team’s README.",
     context: "Team project with Sidharth Lama, Riyaan Sheth and Nandani Singh. Developed as a prototype in September 2025.",
     status: "Team-built prototype", stack: ["React Native", "Expo", "Gemini", "AsyncStorage"],
     repository: "https://github.com/BilalSabugar/CalmPulseGenAI", source: "https://github.com/BilalSabugar/CalmPulseGenAI/blob/main/README.md",
     decisions: [
       { title: "Support common daily activities", text: "The prototype brings together mood and sleep logging, journaling, breathing exercises and meditation timers rather than relying only on conversational AI." },
       { title: "Use a shared cross-platform foundation", text: "React Native and Expo provide the application structure. AsyncStorage supports on-device records while the chat capability connects to Gemini." },
-      { title: "Credit the collaboration", text: "The repository names two back-end developers and two coordinators. Bilal's contribution is presented in that team context, without claiming sole ownership of the app." },
+      { title: "Keep the prototype scope clear", text: "Mock-user login supports the demonstration flow. Production identity, sensitive-data handling and clinical validation would require separate work before treating it as a deployed wellness service." },
     ],
     scope: "The repository uses mock users for a prototype login flow. The application is not presented as a clinically validated service, medical product or production authentication system.",
     outcome: "A public team prototype demonstrating a collection of wellness tools and AI-assisted interaction.",

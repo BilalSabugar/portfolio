@@ -336,4 +336,79 @@ html { scroll-behavior:smooth; scroll-padding-top:110px; }
  .site-index-grid { grid-template-columns:1fr; gap:30px; padding-bottom:65px; }
  .credential-card { grid-template-columns:1fr; gap:20px; padding:30px 0 60px; } .credential-card h2 { font-size:34px; }
 }
+/* Editorial hierarchy: the purpose, contribution and evidence precede detail. */
+.page-intro { padding-top:65px; padding-bottom:40px; }
+.page-intro h1 { font-size:clamp(40px,6.5vw,88px); }
+.home-intro h1 { font-size:clamp(44px,4.8vw,76px); line-height:1.09; }
+.home-description { font-size:16px; line-height:1.8; max-width:49ch; }
+.work-group { padding:20px 0 65px; }
+.work-group + .work-group { border-top:1px solid var(--hairline); padding-top:45px; }
+.work-group-intro { display:grid; grid-template-columns:1fr 1fr; align-items:start; gap:35px; margin-bottom:30px; }
+.work-group-intro h2 { font-size:clamp(24px,2.5vw,36px); line-height:1.25; letter-spacing:-.035em; max-width:23ch; margin:0; }
+.work-group-intro p { color:var(--subtle); line-height:1.75; font-size:15px; max-width:49ch; margin:0; }
+.work-entry { min-width:0; display:flex; flex-direction:column; }
+.work-entry-image-link { display:block; }
+.work-entry-heading h3 { font-size:34px; margin:0; letter-spacing:-.035em; }
+.work-entry > p { font-size:16px; line-height:1.75; max-width:53ch; }
+.work-preview-facts { margin:20px 0 22px; font-size:14px; line-height:1.6; }
+.work-preview-facts > div { border-top:1px solid var(--hairline); padding:12px 0; }
+.work-preview-facts dt { color:var(--subtle); font-size:12px; margin-bottom:4px; }
+.work-preview-facts dd { margin:0; }
+.work-entry-bottom { border-top:1px solid var(--hairline); margin-top:auto; padding-top:16px; display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; justify-content:space-between; }
+.work-entry-bottom > span { color:var(--subtle); font-size:12px; }
+.work-entry-bottom a { display:inline-flex; gap:10px; align-items:center; font-size:13px; color:var(--accent); min-height:32px; }
+.work-grid-software .work-entry-visual { aspect-ratio:2.5; }
+.work-grid-software .software-title { padding:22px; }
+.work-grid-software .software-title strong { font-size:clamp(32px,3.5vw,54px); }
+.case-at-a-glance { display:grid; grid-template-columns:1.1fr .8fr 1.2fr; gap:28px; border-block:1px solid var(--hairline); padding:24px 0; margin:0 0 40px; }
+.case-at-a-glance dt { color:var(--subtle); font-size:12px; margin-bottom:10px; }
+.case-at-a-glance dd { margin:0; font-size:15px; line-height:1.65; }
+.case-body p,.paper-body p { font-size:17px; line-height:1.85; }
+.case-takeaway { border-left:2px solid var(--accent); padding:5px 0 5px 24px; margin:30px 0; font-size:22px; line-height:1.6; letter-spacing:-.025em; }
+.case-takeaway span { display:block; color:var(--accent); font-size:12px; margin-bottom:12px; letter-spacing:0; }
+.case-conversation { border-block:1px solid var(--hairline); padding:35px 0; }
+.case-conversation h2 { font-size:32px; letter-spacing:-.035em; margin:0 0 12px; }
+.case-conversation p { color:var(--subtle); line-height:1.8; max-width:65ch; }
+.opportunity-section { border-top:1px solid var(--hairline); }
+.opportunity-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 40px; }
+.opportunity-grid > a { display:block; padding:28px 0; border-top:1px solid var(--hairline); }
+.opportunity-grid h3 { display:flex; gap:20px; justify-content:space-between; font-size:25px; line-height:1.35; letter-spacing:-.035em; margin:14px 0; }
+.opportunity-grid h3 svg { flex-shrink:0; color:var(--accent); }
+.opportunity-grid p { max-width:52ch; font-size:15px; line-height:1.8; color:var(--subtle); }
+.enquiry-intents { border:0; padding:0; margin:0 0 25px; min-width:0; }
+.enquiry-intents legend { font-size:15px; margin-bottom:16px; }
+.enquiry-intents > div { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.enquiry-intents label { border:1px solid var(--hairline); display:flex; align-items:center; gap:10px; padding:14px; font-size:13px; min-height:56px; cursor:pointer; }
+.enquiry-intents .intent-selected { border-color:var(--accent); background:#e38c640b; }
+.enquiry-intents input { accent-color:var(--accent); flex-shrink:0; }
+.enquiry-intents label:focus-within { outline:2px solid var(--paper); outline-offset:3px; }
+.intent-context { border-bottom:1px solid var(--hairline); padding-bottom:25px; margin-bottom:30px; }
+.intent-context h2 { font-size:28px; line-height:1.3; margin:0 0 10px; letter-spacing:-.03em; }
+.intent-context p { color:var(--subtle); font-size:15px; line-height:1.8; }
+.enquiry-reference { font-size:13px!important; display:flex; flex-wrap:wrap; gap:15px; }
+.enquiry-reference button { color:var(--accent); background:none; border:0; text-decoration:underline; padding:0 4px; }
+.enquiry-form .brief-guidance { font-size:14px; line-height:1.7; max-width:58ch; }
+.prepared-draft { margin-top:24px; border:1px solid var(--hairline); padding:20px; }
+.prepared-draft p { color:var(--subtle); line-height:1.7; font-size:14px; }
+.prepared-draft label { display:block; font-size:13px; }
+.prepared-draft textarea { display:block; width:100%; margin:12px 0 18px; background:var(--surface); border:1px solid var(--hairline); color:var(--paper); padding:12px; font-size:15px; line-height:1.7; resize:vertical; }
+.contact-layout aside p { font-size:15px; line-height:1.8; }
+@media(max-width:760px) {
+ .page-intro { padding-top:40px; }
+ .page-intro-copy { font-size:16px; }
+ .home-intro h1 { font-size:clamp(35px,8.2vw,58px); }
+ .home-description { font-size:16px; }
+ .work-group-intro { grid-template-columns:1fr; gap:15px; }
+ .work-entry-heading h3 { font-size:30px; }
+ .work-entry > p,.case-body p,.paper-body p { font-size:16px; }
+ .work-grid-software .work-entry-visual { aspect-ratio:2.2; }
+ .work-grid-software .software-title strong { font-size:38px; }
+ .case-at-a-glance { grid-template-columns:1fr; gap:20px; }
+ .case-at-a-glance dt { margin-bottom:4px; }
+ .case-takeaway { font-size:20px; margin-inline:0; padding-left:18px; }
+ .opportunity-grid { grid-template-columns:1fr; }
+ .enquiry-intents > div { grid-template-columns:1fr; }
+ .enquiry-intents label { min-height:48px; }
+ .contact-layout > aside { order:2; }
+}
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .folio main { animation:none; } .folio *, .folio *::before, .folio *::after { transition:none!important; animation:none!important; } }

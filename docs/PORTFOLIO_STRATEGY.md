@@ -67,3 +67,13 @@ CV: optional. No approved CV exists in the checkout; offer a request link rather
 5. Review branded searches and relevant specific queries such as Novexa hexapod, OSRS robotics and Bilal Sabugar robotics. Measure index coverage, qualified enquiries and project-page engagement rather than vanity traffic.
 
 No design, schema or sitemap guarantees indexing, ranking, award recognition or commercial results. GitHub Pages project sites cannot serve an authoritative domain-root robots.txt from `/portfolio/robots.txt`; rely on crawlable links, per-page robots metadata and sitemap submission, and do not claim otherwise.
+
+## Editorial refinement: contribution before catalogue
+
+The next pass prioritises a visitor understanding Bilal's work, rather than learning the portfolio's filing system. The opening statement names robotics and software directly. Project previews separate purpose, individual contribution, available evidence and current development stage. Robotics and software have distinct groups; smaller repositories remain secondary. Each detailed case adds a short engineering principle, without presenting it as a measured outcome.
+
+Writing follows concise, scannable and objective web-content principles from [NN/g](https://www.nngroup.com/articles/concise-scannable-and-objective-how-to-write-for-the-web/) and the user-needs approach in [GOV.UK content design guidance](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/plan-manage-content/understand-content-design/). These sources inform the editorial approach; their research does not establish a measured improvement for this portfolio.
+
+Four contact paths cover freelance projects, hiring or internships, research collaboration, and Aetheron Labs / investment conversations. The latter is an enquiry route, not a claim of an active funding round. Hiring guidance offers a CV on request; no unapproved public CV is introduced. Project-specific links preserve a reference in the draft. The visitor reviews and sends the message in their email application; the site is not an email-delivery service.
+
+No new customers, revenue, benchmark performance, qualifications or team responsibilities were invented for this pass. Existing source attribution and AI-assisted implementation disclosures remain in place.

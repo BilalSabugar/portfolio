@@ -39,5 +39,17 @@ for (const url of urls) {
   if (!exists(route)) issues.push(`sitemap: missing ${route}`);
 }
 if (urls.length !== 16) issues.push(`sitemap: expected 16 canonical URLs, found ${urls.length}`);
+const home = fs.readFileSync(path.join(root, "index.html"), "utf8");
+for (const intent of ["freelance", "hiring", "research", "company"]) {
+  if (!home.includes(`${base}/contact/?intent=${intent}`)) issues.push(`home: missing ${intent} enquiry path`);
+}
+for (const slug of ["novexa", "osrs", "roboscout", "wirk", "recoveros", "calm-pulse"]) {
+  const file = path.join(root, "work", slug, "index.html");
+  if (!fs.existsSync(file)) { issues.push(`case study: missing ${slug}`); continue; }
+  const html = fs.readFileSync(file, "utf8");
+  for (const marker of ['class="case-at-a-glance"', 'id="contribution"', 'id="scope"', `project=${slug}`]) {
+    if (!html.includes(marker)) issues.push(`${slug}: missing contribution, scope or enquiry context: ${marker}`);
+  }
+}
 if (issues.length) { console.error(issues.join("\n")); process.exit(1); }
 console.log(`Verified ${pages} exported public HTML pages, internal assets/links, JSON-LD and ${urls.length} sitemap entries. Base path: ${base || "/"}`);
