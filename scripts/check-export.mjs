@@ -12,7 +12,7 @@ function files(directory) {
 const htmlFiles = files(root).filter(file => file.endsWith(".html"));
 const exists = pathname => {
   let target = path.join(root, decodeURIComponent(pathname));
-  return fs.existsSync(target) || fs.existsSync(`${target}.html`) || fs.existsSync(path.join(target, "index.html"));
+  return (fs.existsSync(target) && fs.statSync(target).isFile()) || fs.existsSync(`${target}.html`) || fs.existsSync(path.join(target, "index.html"));
 };
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");

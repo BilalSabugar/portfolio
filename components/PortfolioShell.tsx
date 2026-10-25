@@ -14,7 +14,7 @@ export function PortfolioShell({ children }: { children: React.ReactNode }) {
     <main id="content">{children}</main>
     <footer className="folio-footer">
       <div className="footer-invite"><p className="eyebrow">Have something worth building?</p><Link href="/contact/">Let’s work on it.<ArrowUpRight /></Link></div>
-      <div className="footer-bottom"><span>© {new Date().getFullYear()} Bilal Sabugar</span><div><a href={links.github} target="_blank" rel="noreferrer"><Github size={15} />GitHub</a><a href={links.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} />LinkedIn</a><a href={links.coffee} target="_blank" rel="noreferrer">Buy me a coffee <ArrowUpRight size={14} /></a><Link href="/certificates/">Credentials</Link><Link href="/index/">Site index</Link></div></div>
+      <div className="footer-bottom"><span>© {new Date().getFullYear()} Bilal Sabugar</span><div><a href={links.github} target="_blank" rel="noreferrer"><Github size={15} />GitHub</a><a href={links.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} />LinkedIn</a><a href={links.coffee} target="_blank" rel="noreferrer">Buy me a coffee <ArrowUpRight size={14} /></a><Link href="/certificates/">Credentials</Link><Link href="/directory/">Site index</Link></div></div>
     </footer>
   </div>;
 }
