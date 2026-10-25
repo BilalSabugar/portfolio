@@ -1,30 +1,45 @@
-# Maintaining this portfolio
+# Maintaining Bilal Sabugar's portfolio
 
-The public site is a static Next.js export deployed to GitHub Pages. There is no connected browser CMS. The legacy admin routes explain this instead of offering an editor whose changes never reach the public site.
+This is a Next.js static export deployed to GitHub Pages. Changes to main trigger the existing Pages workflow. Content is maintained in the repository; the old browser CMS is not connected to the public site.
 
-## Content locations
+## Content map
 
-- `components/PortfolioExperience.tsx`: chapter introductions, project context and contact flow.
-- `lib/atlas-data.ts`: public repositories, company programs and profile links.
-- `lib/portfolio-data.ts`: education, credentials, services and archive records.
-- `lib/site-content.ts`: research article summaries.
+- `lib/portfolio.ts`: selected work, research, company programs, services, source links and smaller repositories.
+- `app/about/page.tsx`: biography and education.
+- `app/certificates/page.tsx`: course credential and its public record.
+- `components/WorkExhibit.tsx`: interactive homepage evidence views.
+- `app/portfolio.css`: current visual system. `app/globals.css` retains global/native-scrollbar and legacy styles.
+- `lib/seo.tsx`, `app/sitemap.ts`: page metadata, structured data and the XML sitemap.
+- `docs/PORTFOLIO_STRATEGY.md`: research, source register, architectural decisions and search strategy.
 
-## Before publishing a record
+## Add a project
 
-1. Verify its title, dates, contribution and status against an accessible source.
-2. Distinguish personal work, team work and company-owned work. Company programs stay under Aetheron Labs.
-3. Separate working features from plans and performance targets. Do not publish client-confidential details or claims without approval.
-4. Use real project photos as evidence. The night-lab background and interactive robot are illustrative, not prototype photographs or engineering CAD.
-5. Add only credentials that can be substantiated. Do not invent achievements to fill a section.
+Add a record to `works` in `lib/portfolio.ts`. The case-study route and static URL are generated automatically. Include a problem, specific role, team context, decisions, scope, source URL and current status. Use source material rather than invented results. All selected projects enter the work index, site index and sitemap automatically.
 
-## Contact and privacy
+Company programs stay under Aetheron Labs. A detailed company-related case study can also appear in the work index if its ownership and team context are explicit. Novexa's current repository is Labs-Aetheron/Novexa.
 
-The contact form creates a `mailto:` draft. It does not send, save or upload enquiries. The visitor sends the message from their email application. Direct email and LinkedIn remain alternatives.
+## Add research or credentials
 
-No CV download is offered because no approved public CV is in this repository. If added later, remove private addresses, signatures, references' contact details and other information not intended for public distribution.
+Add a research record to `research`. Distinguish journal articles, preprints and repository reports. Use the exact source title, list collaborators, and do not claim peer review or a DOI without evidence. Course certificates belong in the credentials page, not as duplicate publications.
+
+The current Robot Kinematics record comes from the public LinkedIn listing, including its listed expiry. No original certificate scan is available in this checkout. Additional awards or credentials need supporting material before inclusion.
+
+## Media
+
+`public/work/` contains real Novexa repository imagery and OSRS research figures. The Novexa CAD viewer loads the original 19 MB source STL only after a visitor opts in. It is a design viewer, not a movement simulation. Do not replace it with a generated imitation and describe that as original CAD.
+
+Existing generated night-lab images remain in the repository for history but are not used by the rebuilt public pages.
+
+## Contact and CV
+
+The enquiry form prepares a mailto draft; the visitor reviews and sends it in their email application. No entries are submitted or stored by the site. Direct email, LinkedIn and Buy Me a Coffee are available.
+
+No approved public CV is available. The site offers a CV request link. Prepare a public version deliberately before adding a download; omit private addresses, signatures, references' contacts and confidential details.
 
 ## Verify and deploy
 
-Run `npm run build`. Review the homepage, all seven chapter dialogs, keyboard Escape/focus, mobile navigation, project and research archives, and contact field validation. Commit and push approved changes to `main` to trigger the existing GitHub Pages workflow. Do not include `.env.local` in Git.
+Run `npm run build`, then `node scripts/check-export.mjs`. For a Pages base-path build, set GITHUB_ACTIONS=true and GITHUB_REPOSITORY=BilalSabugar/portfolio, build, then run `node scripts/check-export.mjs /portfolio`.
 
-Shared chapter URLs use hashes: `#projects`, `#systems`, `#research`, `#opensource`, `#company`, `#credentials`, `#contact`. GitHub Pages remains compatible because they do not require a server router.
+Check native links, work filters/search, exhibit tabs, mobile menu/Escape, a case study, research source links, and enquiry validation. Commit and push to main. Keep .env.local, screenshots and build output out of Git.
+
+Old /projects and /blog routes remain as canonicalized aliases. Old chapter hashes route to the corresponding new pages. Search Console ownership and sitemap submission are separate account actions; generating the sitemap does not submit it or guarantee indexing.

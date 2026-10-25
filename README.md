@@ -1,41 +1,28 @@
-# Bilal Sabugar — Night Laboratory Portfolio
+# Bilal Sabugar — engineering portfolio
 
-An interactive engineering portfolio built with Next.js, React Three Fiber, Three.js and Framer Motion. The experience is designed as a navigable robotics laboratory rather than a conventional stack of portfolio sections.
+A research-led portfolio connecting robotics, control systems, software and public source material. Built with Next.js, React, Three.js and Framer Motion; exported to GitHub Pages.
 
-## Experience
+## Structure
 
-- Interactive WebGL hexapod with component-level navigation
-- Structured chapters for projects, systems, research, open source, Aetheron Labs and contact
-- Verified GitHub project records and published research
-- Recruiter-friendly work index
-- Freelance and R&D enquiry flow
-- Responsive desktop and mobile compositions
-- Reduced-motion and keyboard-accessible controls
+- Interactive homepage evidence exhibit using real project CAD and prototype imagery.
+- Searchable work index and six dedicated case studies.
+- Separate records for the IJIRT journal paper and OSRS repository report.
+- Company context, professional background, credentials and freelance enquiries.
+- Optional 3D inspection of the original Novexa assembly STL.
+- Canonical page metadata, structured data, site index and XML sitemap.
 
-## Local development
+## Development
 
-```bash
-npm install
-npm run dev
-```
+Run `npm install`, then `npm run dev`. The dev server serves the portfolio at port 3000.
 
-Open `http://localhost:3000`.
+## Verify
 
-## Verification
+Run `npm run build`, then `node scripts/check-export.mjs`. The checker validates public HTML headings, titles, internal links/assets, JSON-LD and sitemap routes. For a GitHub Actions base-path build, it detects the repository path from the environment. You can also specify it: `node scripts/check-export.mjs /portfolio`.
 
-```bash
-npm run lint
-npm run build
-```
+The existing GitHub Actions workflow builds and validates the export before deploying to GitHub Pages on pushes to main. The generated `out/` folder needs no application server.
 
-The production build is exported to `out/` and does not require an application server.
+## Maintain
 
-## GitHub Pages
+Use [CONTENT_GUIDE.md](CONTENT_GUIDE.md). Project and research data lives in `lib/portfolio.ts`. The research brief, source register, architecture and growth plan are in [docs/PORTFOLIO_STRATEGY.md](docs/PORTFOLIO_STRATEGY.md).
 
-The included `.github/workflows/deploy-pages.yml` workflow builds and deploys the portfolio whenever `main` is pushed. The configuration automatically applies the repository base path for project Pages URLs such as `username.github.io/portfolio/`.
-
-In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.
-
-## Content maintenance
-
-Portfolio records and profile links are maintained in `lib/atlas-data.ts`. The primary experience is implemented in `components/PortfolioExperience.tsx`, while the live Three.js assembly lives in `components/LivingSculpture.tsx`.
+The contact form prepares an email draft rather than storing or sending messages. No analytics, browser CMS, private CV or unverified additional credentials are included. The original night-lab components remain in source history but are not rendered by the current homepage.

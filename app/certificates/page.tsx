@@ -1,16 +1,6 @@
-import { ArchiveShell } from "@/components/ArchiveShell";
-import { certificates } from "@/lib/site-content";
-
-export default function Certificates() {
-  return (
-    <ArchiveShell eyebrow="Proof archive · 02" title="Research and credentials." intro="Verified learning and published work behind the machines—presented as evidence, not decoration.">
-      <section className="certificate-index">
-        {certificates.map((certificate) => (
-          <article key={certificate.id}>
-            <span>{certificate.id}</span><div><p>{certificate.area}</p><h2>{certificate.note}</h2><a href={certificate.area === "IJIRT" ? "https://ijirt.org/publishedpaper/IJIRT199344_PAPER.pdf" : "https://www.linkedin.com/in/bilal-sabugar/"} target="_blank" rel="noreferrer">{certificate.area === "IJIRT" ? "Read original publication ↗" : "View professional profile ↗"}</a></div><small>{certificate.status}</small>
-          </article>
-        ))}
-      </section>
-    </ArchiveShell>
-  );
-}
+import { ArrowUpRight } from "lucide-react";
+import { PortfolioShell, PageIntro, TextLink } from "@/components/PortfolioShell";
+import { links } from "@/lib/portfolio";
+import { pageMetadata } from "@/lib/seo";
+export const metadata = pageMetadata("Credentials & education", "Bilal Sabugar's Introduction to Robot Kinematics credential from IIT Gandhinagar, with issuer, dates, credential ID and public source.", "/certificates/");
+export default function CredentialsPage() { return <PortfolioShell><PageIntro label="Background / Credentials" title="Learning, with a record." intro="Course credentials are listed here. Published papers and repository technical reports have their own research records." /><article className="credential-card"><div><p className="eyebrow">Course credential</p><h2>Introduction to Robot Kinematics</h2><p>Indian Institute of Technology Gandhinagar</p></div><div><dl className="project-facts"><div><dt>Issued</dt><dd>September 2025</dd></div><div><dt>Listed expiry</dt><dd>December 2025</dd></div><div><dt>Credential ID</dt><dd>AB6250044</dd></div><div><dt>Public record</dt><dd>LinkedIn profile</dd></div></dl><p>This is a record of completed learning. The public profile lists an expiry date; it is not presented as a currently valid professional certification.</p><a className="text-link" href={links.linkedin} target="_blank" rel="noreferrer">View the public profile<ArrowUpRight size={18} /></a></div></article><section className="research-note section-space"><p className="eyebrow">Related background</p><h2>Education and research.</h2><TextLink href="/about/">Education & professional background</TextLink><br /><TextLink href="/research/">Papers & technical reports</TextLink></section></PortfolioShell>; }

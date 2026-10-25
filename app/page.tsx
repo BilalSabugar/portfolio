@@ -1,5 +1,27 @@
-import PortfolioExperience from "@/components/PortfolioExperience";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowDown, ArrowUpRight, ArrowRight } from "lucide-react";
+import { PortfolioShell, TextLink } from "@/components/PortfolioShell";
+import { WorkExhibit } from "@/components/WorkExhibit";
+import { asset, links, research, services, siteUrl } from "@/lib/portfolio";
+import { JsonLd, pageMetadata } from "@/lib/seo";
+
+export const metadata = { ...pageMetadata("Robotics & Product Engineering", "Robotics, control systems and software by Bilal Sabugar, co-founder and CTO of Aetheron Labs. Explore Novexa, OSRS, open-source projects and research.", "/"), title: { absolute: "Bilal Sabugar — Robotics & Product Engineering" } };
 
 export default function Home() {
-  return <PortfolioExperience />;
+  return <PortfolioShell>
+    <JsonLd data={{ "@context": "https://schema.org", "@type": "WebSite", name: "Bilal Sabugar", url: `${siteUrl}/`, author: { "@type": "Person", name: "Bilal Sabugar", url: `${siteUrl}/about/`, sameAs: [links.github, links.linkedin] } }} />
+    <section className="home-opening">
+      <div className="home-intro"><p className="eyebrow"><span className="status-dot" />Robotics engineer & software builder</p><h1>From the<br />mechanism<br />to the <em>code.</em></h1><p className="home-description">I’m Bilal Sabugar. I work across mechanical design, robot control and software to turn an engineering idea into a system you can build, operate and study.</p><div className="home-actions"><Link className="button-primary" href="/work/">Explore my work<ArrowUpRight size={18} /></Link><Link className="quiet-link" href="/about/">A little about me<ArrowRight size={16} /></Link></div><a className="scroll-cue" href="#selected-work"><ArrowDown size={16} />Follow the work</a></div>
+      <WorkExhibit />
+    </section>
+    <div className="context-strip"><Link href="/company/"><span>Building with a team</span><strong>Co-founder & CTO · Aetheron Labs<ArrowUpRight size={15} /></strong></Link><Link href="/research/"><span>Documenting the work</span><strong>Published research & technical reports<ArrowUpRight size={15} /></strong></Link><a href={links.github} target="_blank" rel="noreferrer"><span>Open to inspection</span><strong>Code, CAD & development records<ArrowUpRight size={15} /></strong></a></div>
+    <section className="selected-work section-space" id="selected-work"><div className="section-heading"><div><p className="eyebrow">01 / Selected work</p><h2>One practice.<br />Several ways to build.</h2></div><p>Start with a machine. Follow the control system. Explore the software built around engineering work.</p></div>
+      <Link href="/work/novexa/" className="feature-story"><div className="feature-photo"><Image src={asset("/work/novexa-front.jpg")} alt="Actual Novexa prototype with exposed control electronics and six printed legs" fill sizes="(max-width: 760px) 100vw, 60vw" /><span>From the workshop / Novexa</span></div><div className="feature-story-copy"><p className="eyebrow">Robotics / Aetheron Labs & team</p><h3>Six legs.<br />Eighteen joints.<br />One machine.</h3><p>Novexa connects a modular printed structure with coordinated leg control. Explore the CAD, the physical prototype and the paper behind it.</p><span className="text-link">Inside Novexa<ArrowUpRight size={20} /></span></div></Link>
+      <div className="paired-stories"><Link href="/work/osrs/"><p className="eyebrow">02 / Control & perception</p><h3>OSRS<ArrowUpRight /></h3><p>The platform around the experiment: hardware interfaces, simulation, control and telemetry.</p><span className="story-category">Collaborative robotics platform</span></Link><Link href="/work/roboscout/"><p className="eyebrow">03 / Engineering software</p><h3>RoboScout<ArrowUpRight /></h3><p>Trace requirements through component research, deterministic calculations and engineering reports.</p><span className="story-category">Independent open-source project</span></Link></div><TextLink href="/work/">View all six project records</TextLink>
+    </section>
+    <section className="company-feature section-space"><p className="eyebrow">02 / Company building</p><div><h2>Building at<br /><em>Aetheron Labs.</em></h2><p>As co-founder and CTO, I work with the team on robotics and mechatronic systems. Company programs have their own context, development stages and engineering constraints.</p><TextLink href="/company/">My role and the company’s work</TextLink></div><span className="company-feature-note">Mechanical design<br />Fabrication<br />System integration</span></section>
+    <section className="research-preview section-space"><div className="section-heading"><div><p className="eyebrow">03 / Research</p><h2>The reasoning<br />behind the build.</h2></div><TextLink href="/research/">All research</TextLink></div>{research.map(item => <Link key={item.slug} className="research-row" href={`/research/${item.slug}/`}><div><span className="eyebrow">{item.type}</span><h3>{item.shortTitle}</h3><p>{item.venue}</p></div><ArrowUpRight size={28} /></Link>)}</section>
+    <section className="services-preview section-space"><div><p className="eyebrow">04 / Work together</p><h2>A clear problem.<br />A practical next step.</h2><p>Available for selected freelance engineering projects and research collaborations.</p><TextLink href="/contact/">Discuss a project</TextLink></div><div>{services.map((service, i) => <article key={service.title}><span className="eyebrow">0{i + 1}</span><h3>{service.title}</h3><p>{service.description}</p></article>)}</div></section>
+  </PortfolioShell>;
 }
