@@ -77,3 +77,11 @@ Writing follows concise, scannable and objective web-content principles from [NN
 Four contact paths cover freelance projects, hiring or internships, research collaboration, and Aetheron Labs / investment conversations. The latter is an enquiry route, not a claim of an active funding round. Hiring guidance offers a CV on request; no unapproved public CV is introduced. Project-specific links preserve a reference in the draft. The visitor reviews and sends the message in their email application; the site is not an email-delivery service.
 
 No new customers, revenue, benchmark performance, qualifications or team responsibilities were invented for this pass. Existing source attribution and AI-assisted implementation disclosures remain in place.
+
+## Explain the system through interaction
+
+Novexa and OSRS now have a source-grounded, visitor-controlled system walkthrough rather than another decorative animation. Novexa covers structure, inverse kinematics and gait coordination. OSRS covers sensing, estimation, control and inspection. Each stage explains its input, output and purpose, and links to original project documentation. The walkthroughs replace the repeated decisions section on those two pages; software cases retain their existing decisions.
+
+The original [Novexa README](https://github.com/Labs-Aetheron/Novexa/blob/main/README.md), [OSRS technical report](https://github.com/TeamOSRS/OSRS/blob/main/docs/BALL_BALANCER_RESEARCH_PAPER.md) and [OSRS authorship record](https://github.com/TeamOSRS/OSRS/blob/main/AUTHORS.md) were re-read for this work. The explanatory panels are not simulations or reproduced experiments, and the copy says so. No battery-life, stability or controller-performance claim has been added.
+
+The About page connects three capability areas to inspectable projects instead of presenting unsupported skill ratings. Aetheron Labs remains a team/company record, with its own partnership and investment enquiry path and no invented funding status.

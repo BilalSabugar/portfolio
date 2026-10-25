@@ -50,6 +50,17 @@ for (const slug of ["novexa", "osrs", "roboscout", "wirk", "recoveros", "calm-pu
   for (const marker of ['class="case-at-a-glance"', 'id="contribution"', 'id="scope"', `project=${slug}`]) {
     if (!html.includes(marker)) issues.push(`${slug}: missing contribution, scope or enquiry context: ${marker}`);
   }
+  if (slug === "novexa" || slug === "osrs") {
+    const expected = slug === "novexa" ? 3 : 4;
+    const tabs = [...html.matchAll(/<button[^>]*role="tab"[^>]*>/g)].map(match => match[0]);
+    if (tabs.length !== expected) issues.push(`${slug}: expected ${expected} walkthrough stages`);
+    if (tabs.filter(tab => tab.includes('aria-selected="true"')).length !== 1) issues.push(`${slug}: walkthrough must have one selected tab`);
+    if (!html.includes('id="system-walkthrough"') || !html.includes('role="tabpanel"')) issues.push(`${slug}: missing walkthrough region/panel`);
+    for (const tab of tabs) {
+      const controls = tab.match(/aria-controls="([^"]+)"/)?.[1];
+      if (!controls || !html.includes(`id="${controls}"`)) issues.push(`${slug}: broken tab-to-panel relationship`);
+    }
+  }
 }
 if (issues.length) { console.error(issues.join("\n")); process.exit(1); }
 console.log(`Verified ${pages} exported public HTML pages, internal assets/links, JSON-LD and ${urls.length} sitemap entries. Base path: ${base || "/"}`);

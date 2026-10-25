@@ -8,6 +8,8 @@ This is a Next.js static export deployed to GitHub Pages. Changes to main trigge
 - `app/about/page.tsx`: biography and education.
 - `app/certificates/page.tsx`: course credential and its public record.
 - `components/WorkExhibit.tsx`: interactive homepage evidence views.
+- `lib/walkthroughs.ts`: source-grounded Novexa and OSRS system walkthroughs; `components/SystemWalkthrough.tsx` handles stage selection and keyboard navigation.
+- `lib/contact.ts`: hiring, freelance, research and company enquiry guidance.
 - `app/portfolio.css`: current visual system. `app/globals.css` retains global/native-scrollbar and legacy styles.
 - `lib/seo.tsx`, `app/sitemap.ts`: page metadata, structured data and the XML sitemap.
 - `docs/PORTFOLIO_STRATEGY.md`: research, source register, architectural decisions and search strategy.

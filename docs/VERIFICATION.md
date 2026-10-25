@@ -29,6 +29,14 @@ Local screenshots (ignored by Git) include `qa-rebuild-home.png`, `qa-rebuild-mo
 - Desktop (1440 px) and mobile (390 px) home/work/contact states were inspected. Checked mobile work and contact document widths remained within the viewport. Enquiry options precede the supporting services on mobile.
 - React review removed effect-driven URL-to-state copying; contact query parameters are read under a Suspense boundary and initialise a keyed enquiry form. This also handles navigation between enquiry contexts without stale form state.
 
+### Interactive engineering and profile refinement
+
+- All three Novexa stages and all four OSRS stages were exercised in the local browser. Stage selection changed the explanatory heading and content. Home/End navigation and right-arrow wrapping were checked. The wrapped focus landed on Sense, with exactly one selected tab; the panel's accessible label matched the selected tab ID.
+- Desktop (1440 px) and mobile (390 px) walkthrough layouts were visually inspected. At 320 px, OSRS's document width stayed within the viewport; the About page was also checked for overflow at that width. No browser console errors were returned in the inspected OSRS state.
+- The case-header walkthrough link was exercised. OSRS's project enquiry retained its project reference, and the company page's enquiry link opened the company-specific guidance.
+- Targeted ESLint passed on the changed React and data files. Production-mode build and the export checker passed before final publishing. The checker also validates three/four stage counts, exactly one initially selected tab and exported tab-to-panel relationships for the two walkthroughs.
+- These checks establish the implemented interactions and inspected layouts, not general accessibility certification, independent research reproduction or improved hiring/investment conversion.
+
 - No field Core Web Vitals data, Search Console ownership, actual Google index coverage, assistive-technology session or independent usability study was available. The strategy document's performance values are targets, not achieved measurements.
 - Sources were public GitHub files/API, the original IJIRT PDF, the company website and an indexed LinkedIn profile result. Direct LinkedIn page access was blocked; the credential is not independently issuer-verified. No certificate image or public CV was fabricated.
 - Code and research are presented with source context; external project benchmark claims were not independently reproduced. AI-assisted development disclosures were preserved for RoboScout and OSRS.
