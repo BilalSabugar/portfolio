@@ -36,7 +36,7 @@ Generated night-lab imagery and unused components were removed from the current 
 
 The enquiry form prepares a message on the page, then offers equal options to open an email app or copy the message. The visitor sends it themselves. No entries are submitted or stored by the site. Direct email, LinkedIn and Buy Me a Coffee are available.
 
-`public/bilal-sabugar-resume.pdf` is the intentionally public one-page CV. Its editable source is `scripts/build-resume.py` (ReportLab and Arial on the Windows authoring host). The final artifact is also under ignored `output/pdf/`. It omits private addresses, signatures, references’ contacts, and unverified dates. Exact IIT internship dates and supervisor details still need owner confirmation.
+`public/bilal-sabugar-resume.pdf` is the owner's supplied three-page CV, published unchanged with explicit approval on 26 October 2026 after noting its personal contact and biographical details. Replace the PDF directly when the owner supplies a revision; do not regenerate it. Download links use `resumePath` in `lib/profile.ts`.
 
 ## Verify and deploy
 

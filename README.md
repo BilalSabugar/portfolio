@@ -2,7 +2,7 @@
 
 A research-led portfolio connecting robotics, control systems, software and public source material. Built with Next.js, React, Three.js and Framer Motion; exported to GitHub Pages.
 
-[Live portfolio](https://bilalsabugar.github.io/portfolio/) · [Public one-page CV](https://bilalsabugar.github.io/portfolio/bilal-sabugar-resume.pdf)
+[Live portfolio](https://bilalsabugar.github.io/portfolio/) · [Public CV](https://bilalsabugar.github.io/portfolio/bilal-sabugar-resume.pdf)
 
 ## Structure
 
@@ -12,7 +12,7 @@ A research-led portfolio connecting robotics, control systems, software and publ
 - Company context, professional background, credentials and freelance enquiries.
 - Optional 3D inspection of the original Novexa assembly STL.
 - Canonical page metadata, structured data, site index and XML sitemap.
-- IITGN research experience, an intentionally public one-page CV, genuine software previews and sourced SIL experiment results.
+- IITGN research experience, the owner-supplied CV, genuine software previews and sourced SIL experiment results.
 - Self-hosted licensed fonts, responsive image derivatives and project-specific sharing cards.
 
 ## Development
