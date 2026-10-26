@@ -147,6 +147,28 @@ export const works: Work[] = [
     scope: "The repository uses mock users for a prototype login flow. The application is not presented as a clinically validated service, medical product or production authentication system.",
     outcome: "A public team prototype demonstrating a collection of wellness tools and AI-assisted interaction.",
   },
+  {
+    slug: "nook", number: "07", title: "Nook", category: "Software", label: "AI workspace · Experimental prototype",
+    summary: "An open-source workspace prototype connecting editable documents, coworker profiles and model-provider interfaces, with simulated computer tools.",
+    contribution: "Independent repository · Workspace prototype",
+    evidence: "Working document editor · Local persistence · Inspectable route handlers",
+    takeaway: "An interface can make an agent workflow understandable without proving the underlying autonomy. The implementation and its demonstrations need to be evaluated separately.",
+    question: "How can documents, model settings and proposed actions share one workspace?",
+    role: "Nook is an experimental project in my public GitHub repository. This record covers the workspace implementation and the boundaries found during a source and local-runtime review; it does not claim that every capability described in the README is operational.",
+    context: "Reviewed at commit c863879 on 26 October 2026. A local run verified Space creation, document editing, Markdown preview and persistence after reload. The screenshot uses review-created sample content, not client or production data.",
+    status: "Experimental local workspace", stack: ["Next.js", "React", "TypeScript", "Browser storage", "JSON-RPC tool interfaces"],
+    repository: "https://github.com/BilalSabugar/Nook", source: "https://github.com/BilalSabugar/Nook/tree/c863879ce8ec1f3bc950a22c69c712b1fe6c47f7/src",
+    image: "/work/nook-screen.png", imageAlt: "Actual Nook local document preview showing an audit-created page that explicitly labels simulated capabilities", imageCaption: "Actual local application · Review-created sample document · No provider credentials connected · Regenerated dependency lockfile and font fallback used for this local run", imageWidth: 1280, imageHeight: 720, previewLabel: "Experimental workspace · Review-created sample data",
+    decisions: [
+      { title: "Keep documents directly editable", text: "Spaces support document creation, Markdown editing, preview and export. Space content, agent definitions and settings use browser localStorage; chat and computer state are not equivalent to a persistent server workspace." },
+      { title: "Separate adapters from verified integrations", text: "Server routes contain adapters for Gemini, OpenAI, Anthropic and Ollama. No credentialed provider request was exercised in this review. The default demo uses scripted responses rather than an autonomous tool-execution loop." },
+      { title: "Inspect what a computer tool actually does", text: "The terminal route returns canned output; it does not run a shell or launch containers. The browser route fetches and parses HTML rather than controlling an interactive browser, and it can return simulated fallback content. Voice sessions are simulated." },
+      { title: "Treat tool governance as unfinished", text: "The JSON-RPC endpoint implements a limited tools/list and tools/call interface. Arithmetic and document formatting are implemented, while web search is canned and an advertised fetch tool lacks a corresponding implementation. Review cards are interface controls, not a server-enforced authorization boundary." },
+    ],
+    outcome: "A working local document workflow and an inspectable prototype for model settings, coworker interfaces and tool review. Eight repository unit tests passed locally; they do not establish end-to-end provider operation, security or MCP compliance.",
+    scope: "No production authentication, real container isolation or autonomous background runtime was established. Provider keys can be stored in browser settings, and the routes are not suitable for public exposure without a separate security review. The roadmap describes real computer execution, speech integration and multi-user controls as future work. This portfolio publishes only a static case study, not Nook's API routes.",
+    disclosure: "The repository reviewed here does not provide a specific implementation-authorship or AI-assistance disclosure. Individual implementation responsibilities and the extent of AI assistance are not independently established; no sole manual-authorship claim is made.",
+  },
 ];
 
 export const research = [
@@ -155,7 +177,7 @@ export const research = [
 ] as const;
 
 export const programs = [
-  { title: "S.L.A.B.", description: "Shelf Loading Autonomous Bot: a material-handling platform. V1 has app-controlled movement and lifting; it is not presented as an autonomous deployed system.", contribution: "I co-developed V1, contributing to software, embedded electronics and hardware integration.", next: "V2 development targets omnidirectional movement, robotic gripping, autonomous navigation and docking.", status: "Working V1 prototype · V2 in development", href: "https://www.aetheronlabs.in/programs/slab/" },
+  { title: "S.L.A.B.", description: "Shelf Loading Autonomous Bot: a material-handling platform. V1 has app-controlled movement and lifting; it is not presented as an autonomous deployed system.", contribution: "I co-developed V1, contributing to software, embedded electronics and hardware integration.", next: "V2 targets autonomous navigation, omnidirectional mobility, robotic gripping, automatic docking and improved vertical shelf interaction. The 20 kg payload and 1,200 mm lift are development targets, not independently validated physical specifications.", status: "Working V1 prototype · V2 in development", href: "https://www.aetheronlabs.in/programs/slab/" },
   { title: "Novexa", description: "An 18-joint hexapod with original CAD, fabrication files, a physical prototype and a published paper. Built in 2025 before the company; its open repository is now hosted by Aetheron Labs.", contribution: "My work covered mechanical design, fabrication and mechatronic integration within the team.", next: "Further autonomy is roadmap work, not an independently verified result.", status: "Experimental platform · Open project", href: "/work/novexa/" },
   { title: "Raven", description: "A drone-based intrusion-detection concept with a master hexacopter and six modular tricopters.", contribution: "My current work focuses on system design, docking mechanisms, mission coordination and simulation.", next: "Sector exploration, intrusion alerts, return and docking are planned capabilities; an operational drone swarm is not claimed.", status: "System design & simulation", href: "https://www.aetheronlabs.in/programs/raven/" },
   { title: "VIER", description: "A robotic system for intravenous-procedure training on a phantom, combining a 5-DOF arm and a 1-DOF forearm support. This is a training platform, not a clinically validated treatment device.", contribution: "I am developing the platform and integrating stepper motors, magnetic encoders and embedded control.", next: "Inverse-kinematics-based motion, closed-loop positioning and movement recording for trainee assessment are planned capabilities.", status: "Prototype development", href: "https://www.aetheronlabs.in/programs/vier/" },

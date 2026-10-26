@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
-import { research, siteUrl, works } from "./portfolio";
+import { links, research, siteUrl, works } from "./portfolio";
+
+export const companyIdentity = {
+  "@type": "Organization",
+  "@id": `${siteUrl}/company/#aetheron`,
+  name: "Aetheron Labs LLP — Robotics & Automation, India",
+  legalName: "Aetheron Labs LLP",
+  url: links.company,
+  description: "Robotics and automation company developing robotic systems for industrial automation and material handling.",
+};
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   const url = `${siteUrl}${path}`;

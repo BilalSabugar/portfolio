@@ -1,5 +1,9 @@
 # Rebuild verification — 26 October 2026
 
+## Latest comprehensive review
+
+See [COMPREHENSIVE_REVIEW.md](COMPREHENSIVE_REVIEW.md) for the current audit, seven-case export checks, Nook review and new measurements. The earlier entries below are a historical log. In particular, the owner subsequently confirmed Search Console ownership via screenshot; sitemap fetch remains unresolved, and the approved three-page PDF supersedes the earlier generated résumé.
+
 ## Prepare-message feedback fix
 
 - Reproduced on the public contact page: empty fields invoked native validation without persistent inline feedback; no JavaScript error was logged. A valid form created the draft below the button without moving focus to it. No email was sent.

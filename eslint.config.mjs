@@ -13,6 +13,7 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
     "qa-apps/**",
+    "qa-nook/**",
     "tmp/**",
   ]),
 ]);

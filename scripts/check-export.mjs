@@ -52,9 +52,16 @@ const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]
 for (const url of urls) {
   const route = new URL(url).pathname.replace(/^\/portfolio/, "");
   if (!exists(route)) issues.push(`sitemap: missing ${route}`);
+  const pageFile = path.join(root, route, "index.html");
+  if (fs.existsSync(pageFile)) {
+    const html = fs.readFileSync(pageFile, "utf8");
+    if (!html.includes(`<link rel="canonical" href="${url}"`)) issues.push(`sitemap: canonical mismatch for ${route}`);
+    if (/<meta name="robots" content="[^"]*noindex/.test(html)) issues.push(`sitemap: noindex URL ${route}`);
+  }
 }
-if (urls.length !== 16) issues.push(`sitemap: expected 16 canonical URLs, found ${urls.length}`);
-for (const slug of ["portfolio", "novexa", "osrs", "roboscout", "wirk", "recoveros", "calm-pulse"]) {
+if (new Set(urls).size !== urls.length) issues.push("sitemap: duplicate canonical URLs");
+if (urls.length !== 17) issues.push(`sitemap: expected 17 canonical URLs, found ${urls.length}`);
+for (const slug of ["portfolio", "novexa", "osrs", "roboscout", "wirk", "recoveros", "calm-pulse", "nook"]) {
   const image = path.join(root, "share", `${slug}.png`);
   if (!fs.existsSync(image)) { issues.push(`missing social image: ${slug}`); continue; }
   const bytes = fs.readFileSync(image);
@@ -84,11 +91,11 @@ for (const marker of ['id="coursework"', "T.H.O.M.A.S.", "Q-learning", "No physi
 for (const intent of ["freelance", "hiring", "research", "company"]) {
   if (!home.includes(`${base}/contact/?intent=${intent}`)) issues.push(`home: missing ${intent} enquiry path`);
 }
-for (const slug of ["novexa", "osrs", "roboscout", "wirk", "recoveros", "calm-pulse"]) {
+for (const slug of ["novexa", "osrs", "roboscout", "wirk", "recoveros", "calm-pulse", "nook"]) {
   const file = path.join(root, "work", slug, "index.html");
   if (!fs.existsSync(file)) { issues.push(`case study: missing ${slug}`); continue; }
   const html = fs.readFileSync(file, "utf8");
-  for (const marker of ['class="case-at-a-glance"', 'id="contribution"', 'id="scope"', `project=${slug}`]) {
+  for (const marker of ['class="case-at-a-glance"', 'id="contribution"', 'id="architecture"', 'id="decisions"', 'id="scope"', `project=${slug}`]) {
     if (!html.includes(marker)) issues.push(`${slug}: missing contribution, scope or enquiry context: ${marker}`);
   }
   if (slug === "novexa" || slug === "osrs") {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PortfolioShell, PageIntro, TextLink } from "@/components/PortfolioShell";
 import { programs, links } from "@/lib/portfolio";
-import { pageMetadata } from "@/lib/seo";
+import { companyIdentity, JsonLd, pageMetadata } from "@/lib/seo";
 import { resumePath } from "@/lib/profile";
 import { asset } from "@/lib/portfolio";
 
@@ -10,10 +10,11 @@ export const metadata = pageMetadata("Aetheron Labs", "Bilal Sabugar's role as c
 
 export default function CompanyPage() {
   return <PortfolioShell>
+    <JsonLd data={{ "@context": "https://schema.org", ...companyIdentity }} />
     <PageIntro label="Company / Co-founder & CTO / Since May 2026" title="Aetheron Labs." intro="Aetheron Labs LLP develops robotic systems for industrial automation and material handling. I’m building it with co-founder and CEO Aditya Jadav, leading technical development across software, embedded electronics, mechanical design and hardware integration." />
     <div className="company-introduction">
       <div><p className="eyebrow">My contribution</p><h2>Design the parts.<br />Build the system.<br />Work as a team.</h2></div>
-      <div><p>I coordinate prototyping, component selection, testing and integration across the mechanical, electronics and software systems. S.L.A.B. V1 is one example: app-controlled mobility and lifting, developed with the team.</p><p>The programs below are presented in the company context, not as solely owned personal projects. Role and development-stage descriptions follow my October 2026 CV; the company records provide the wider program context.</p><a className="button-secondary" href={links.company} target="_blank" rel="noreferrer">Visit Aetheron Labs<ArrowUpRight size={18} /></a></div>
+      <div><p className="eyebrow">Aetheron Labs LLP — Robotics & Automation, India</p><p>I coordinate prototyping, component selection, testing and integration across the mechanical, electronics and software systems. S.L.A.B. V1 is one example: app-controlled mobility and lifting, developed with the team.</p><p>The programs below are presented in the company context, not as solely owned personal projects. Role and development-stage descriptions follow my October 2026 CV; the company records provide the wider program context.</p><a className="button-secondary" href={links.company} target="_blank" rel="noreferrer">Visit Aetheron Labs<ArrowUpRight size={18} /></a></div>
     </div>
     <section className="company-programs section-space">
       <div className="section-heading"><div><p className="eyebrow">Company programs</p><h2>Different applications.<br />A shared engineering team.</h2></div><p>Work spanning material handling, legged robots, inspection and training. Each program is at its own development stage; follow the company records for the current scope.</p></div>

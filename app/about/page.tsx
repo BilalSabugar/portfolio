@@ -3,7 +3,7 @@ import { PortfolioShell, PageIntro, TextLink } from "@/components/PortfolioShell
 import { ResearchExperience } from "@/components/ResearchExperience";
 import { links, siteUrl, asset } from "@/lib/portfolio";
 import { resumePath } from "@/lib/profile";
-import { JsonLd, pageMetadata } from "@/lib/seo";
+import { companyIdentity, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata("About Bilal Sabugar", "Bilal Sabugar: IIT Gandhinagar robotics research internship, co-founder and CTO of Aetheron Labs, and B.Tech student at ATLAS. Public resume, engineering projects and research.", "/about/");
 const capabilities = [
@@ -14,7 +14,7 @@ const capabilities = [
 
 export default function AboutPage() {
   return <PortfolioShell>
-    <JsonLd data={{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: { "@type": "Person", "@id": `${siteUrl}/about/#bilal`, name: "Bilal Sabugar", url: `${siteUrl}/about/`, jobTitle: "Co-founder and CTO", worksFor: { "@type": "Organization", name: "Aetheron Labs", url: links.company }, sameAs: [links.github, links.linkedin], knowsAbout: ["Robotics", "Mechatronics", "Robot control", "Software engineering"] } }} />
+    <JsonLd data={{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: { "@type": "Person", "@id": `${siteUrl}/about/#bilal`, name: "Bilal Sabugar", url: `${siteUrl}/about/`, jobTitle: "Co-founder and CTO", worksFor: companyIdentity, sameAs: [links.github, links.linkedin], knowsAbout: ["Robotics", "Mechatronics", "Robot control", "Software engineering"] } }} />
     <PageIntro label="About / Bilal Sabugar" title="I like building the whole system." intro="Mechanical design, control, sensing and the software around a machine. My work connects those parts through prototypes, research and engineering tools." />
     <div className="profile-actions"><a className="button-primary" href={asset(resumePath)} download>Download CV · PDF<Download size={17} /></a><TextLink href="/contact/?intent=hiring">Discuss a role</TextLink></div>
     <section className="about-statement"><p>I’m the co-founder and CTO of Aetheron Labs LLP and a second-year B.Tech student in Artificial Intelligence & Robotics at ATLAS SkillTech University.</p><p>My experience includes a June–July 2026 research internship at the IITGN Robotics Lab, building Novexa with a team, and developing robotics and engineering software. The project records explain my contribution, the decisions and the available evidence.</p></section>

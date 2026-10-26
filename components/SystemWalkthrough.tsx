@@ -28,5 +28,6 @@ export function SystemWalkthrough({ walkthrough }: { walkthrough: Walkthrough })
       <div className="system-explanation" key={step.id}><span className="eyebrow">0{active + 1} / {step.label}</span><h3>{step.title}</h3><p>{step.explanation}</p><div className="system-reason"><h4>Why this matters</h4><p>{step.reason}</p></div><a className="text-link" href={step.source} target="_blank" rel="noreferrer">{step.sourceLabel}<ArrowUpRight size={18} /></a></div>
       <dl className="system-transformation"><div><dt>Input</dt><dd>{step.input}</dd></div><div><dt>Output</dt><dd>{step.output}</dd></div></dl>
     </div><p className="system-note">{walkthrough.note}</p>
+    <details className="walkthrough-reading"><summary>Read all stages without using the tabs</summary>{walkthrough.steps.map(item => <article key={item.id}><h3>{item.title}</h3><p>{item.explanation}</p><p><strong>Why it matters:</strong> {item.reason}</p><p><strong>Input:</strong> {item.input}<br /><strong>Output:</strong> {item.output}</p><a className="text-link" href={item.source} target="_blank" rel="noreferrer">{item.sourceLabel}<ArrowUpRight size={18} /></a></article>)}</details>
   </section>;
 }

@@ -5,6 +5,7 @@ This is a Next.js static export deployed to GitHub Pages. Changes to main trigge
 ## Content map
 
 - `lib/portfolio.ts`: selected work, research, company programs, services, source links and smaller repositories.
+- `lib/project-context.ts`: source-grounded purpose and architecture summaries for every selected case study.
 - `app/about/page.tsx`: biography and education.
 - `app/certificates/page.tsx`: course credential and its public record.
 - `components/WorkExhibit.tsx`: interactive homepage evidence views.
@@ -17,7 +18,7 @@ This is a Next.js static export deployed to GitHub Pages. Changes to main trigge
 
 ## Add a project
 
-Add a record to `works` in `lib/portfolio.ts`. The case-study route and static URL are generated automatically. Include a problem, specific role, team context, decisions, scope, source URL and current status. Use source material rather than invented results. All selected projects enter the work index, site index and sitemap automatically.
+Add a record to `works` in `lib/portfolio.ts` and a purpose/architecture summary in `lib/project-context.ts`. The case-study route and static URL are generated automatically. Include a problem, specific role, team context, decisions, scope, source URL and current status. Use source material rather than invented results. All selected projects enter the work index, site index, social-card generation and sitemap automatically. Update the expected canonical count and project slugs in `scripts/check-export.mjs` when adding a record.
 
 Company programs stay under Aetheron Labs. A detailed company-related case study can also appear in the work index if its ownership and team context are explicit. Novexa's current repository is Labs-Aetheron/Novexa.
 
