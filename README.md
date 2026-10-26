@@ -2,6 +2,8 @@
 
 A research-led portfolio connecting robotics, control systems, software and public source material. Built with Next.js, React, Three.js and Framer Motion; exported to GitHub Pages.
 
+[Live portfolio](https://bilalsabugar.github.io/portfolio/) · [Public one-page CV](https://bilalsabugar.github.io/portfolio/bilal-sabugar-resume.pdf)
+
 ## Structure
 
 - Interactive homepage evidence exhibit using real project CAD and prototype imagery.
@@ -10,6 +12,8 @@ A research-led portfolio connecting robotics, control systems, software and publ
 - Company context, professional background, credentials and freelance enquiries.
 - Optional 3D inspection of the original Novexa assembly STL.
 - Canonical page metadata, structured data, site index and XML sitemap.
+- IITGN research experience, an intentionally public one-page CV, genuine software previews and sourced SIL experiment results.
+- Self-hosted licensed fonts, responsive image derivatives and project-specific sharing cards.
 
 ## Development
 
@@ -26,3 +30,5 @@ The existing GitHub Actions workflow builds and validates the export before depl
 Use [CONTENT_GUIDE.md](CONTENT_GUIDE.md). Project and research data lives in `lib/portfolio.ts`. The research brief, source register, architecture and growth plan are in [docs/PORTFOLIO_STRATEGY.md](docs/PORTFOLIO_STRATEGY.md).
 
 The contact form prepares an email draft rather than storing or sending messages. No analytics, browser CMS, private CV or unverified additional credentials are included. The original night-lab components remain in source history but are not rendered by the current homepage.
+
+Use `node scripts/serve-export.mjs` to inspect a Pages-mode production build at `http://127.0.0.1:4173/portfolio/`. The build adds compatible RSC segment aliases for the known Windows static-export path issue; native Linux CI needs no aliases. Run `npm run lint` and `node scripts/check-imports.mjs --strict` for source checks. `docs/SEARCH_DISCOVERY.md` lists the remaining owner-only Search Console and profile-link steps. Font redistribution notices are under `public/licenses/`.

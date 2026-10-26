@@ -1,20 +1,21 @@
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight, Github, Linkedin } from "lucide-react";
-import { links } from "@/lib/portfolio";
+import { links, asset } from "@/lib/portfolio";
+import { resumePath } from "@/lib/profile";
 import { SiteNavigation } from "./SiteNavigation";
 
 export function PortfolioShell({ children }: { children: React.ReactNode }) {
   return <div className="folio">
     <a className="skip-link" href="#content">Skip to content</a>
     <header className="folio-header">
-      <Link className="wordmark" href="/" aria-label="Bilal Sabugar home"><span className="wordmark-symbol">b<span>.</span></span><span>Bilal Sabugar<small>Robotics & product engineering</small></span></Link>
+      <Link className="wordmark" href="/"><span className="wordmark-symbol" aria-hidden="true">b<span>.</span></span><span>Bilal Sabugar<small>Robotics & product engineering</small></span></Link>
       <SiteNavigation />
       <Link className="header-contact" href="/contact/">Let’s talk <ArrowUpRight size={16} /></Link>
     </header>
     <main id="content">{children}</main>
     <footer className="folio-footer">
       <div className="footer-invite"><p className="eyebrow">Have something worth building?</p><Link href="/contact/">Let’s work on it.<ArrowUpRight /></Link></div>
-      <div className="footer-bottom"><span>© {new Date().getFullYear()} Bilal Sabugar</span><div><a href={links.github} target="_blank" rel="noreferrer"><Github size={15} />GitHub</a><a href={links.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} />LinkedIn</a><a href={links.coffee} target="_blank" rel="noreferrer">Buy me a coffee <ArrowUpRight size={14} /></a><Link href="/certificates/">Credentials</Link><Link href="/directory/">Site index</Link></div></div>
+      <div className="footer-bottom"><span>© {new Date().getFullYear()} Bilal Sabugar</span><div><a href={links.github} target="_blank" rel="noreferrer"><Github size={15} />GitHub</a><a href={links.linkedin} target="_blank" rel="noreferrer"><Linkedin size={15} />LinkedIn</a><a href={links.coffee} target="_blank" rel="noreferrer">Buy me a coffee <ArrowUpRight size={14} /></a><a href={asset(resumePath)} download>CV (PDF)</a><Link href="/certificates/">Credentials</Link><Link href="/directory/">Site index</Link></div></div>
     </footer>
   </div>;
 }

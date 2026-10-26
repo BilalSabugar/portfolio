@@ -10,7 +10,7 @@ This is a Next.js static export deployed to GitHub Pages. Changes to main trigge
 - `components/WorkExhibit.tsx`: interactive homepage evidence views.
 - `lib/walkthroughs.ts`: source-grounded Novexa and OSRS system walkthroughs; `components/SystemWalkthrough.tsx` handles stage selection and keyboard navigation.
 - `lib/contact.ts`: hiring, freelance, research and company enquiry guidance.
-- `app/portfolio.css`: current visual system. `app/globals.css` retains global/native-scrollbar and legacy styles.
+- `app/portfolio.css`: current visual system. `app/globals.css` retains the base styles, native scrollbar and retired-URL notice.
 - `lib/seo.tsx`, `app/sitemap.ts`: page metadata, structured data and the XML sitemap.
 - `docs/PORTFOLIO_STRATEGY.md`: research, source register, architectural decisions and search strategy.
 
@@ -30,18 +30,18 @@ The current Robot Kinematics record comes from the public LinkedIn listing, incl
 
 `public/work/` contains real Novexa repository imagery and OSRS research figures. The Novexa CAD viewer loads the original 19 MB source STL only after a visitor opts in. It is a design viewer, not a movement simulation. Do not replace it with a generated imitation and describe that as original CAD.
 
-Existing generated night-lab images remain in the repository for history but are not used by the rebuilt public pages.
+Generated night-lab imagery and unused components were removed from the current source/public assets. Git history retains them; the current checkout also has an ignored `qa-retired-assets/` recovery folder. Genuine software screenshots are versioned in `public/work/`; their source commits and preview compatibility changes are documented in `docs/REVIEW_FOLLOW_THROUGH.md`.
 
 ## Contact and CV
 
-The enquiry form prepares a mailto draft; the visitor reviews and sends it in their email application. No entries are submitted or stored by the site. Direct email, LinkedIn and Buy Me a Coffee are available.
+The enquiry form prepares a message on the page, then offers equal options to open an email app or copy the message. The visitor sends it themselves. No entries are submitted or stored by the site. Direct email, LinkedIn and Buy Me a Coffee are available.
 
-No approved public CV is available. The site offers a CV request link. Prepare a public version deliberately before adding a download; omit private addresses, signatures, references' contacts and confidential details.
+`public/bilal-sabugar-resume.pdf` is the intentionally public one-page CV. Its editable source is `scripts/build-resume.py` (ReportLab and Arial on the Windows authoring host). The final artifact is also under ignored `output/pdf/`. It omits private addresses, signatures, references’ contacts, and unverified dates. Exact IIT internship dates and supervisor details still need owner confirmation.
 
 ## Verify and deploy
 
 Run `npm run build`, then `node scripts/check-export.mjs`. For a Pages base-path build, set GITHUB_ACTIONS=true and GITHUB_REPOSITORY=BilalSabugar/portfolio, build, then run `node scripts/check-export.mjs /portfolio`.
 
-Check native links, work filters/search, exhibit tabs, mobile menu/Escape, a case study, research source links, and enquiry validation. Commit and push to main. Keep .env.local, screenshots and build output out of Git.
+Check native links, work filters/search, exhibit tabs, mobile menu/Escape, a case study, research source links, and enquiry validation. Commit and push to main. Keep .env.local, temporary QA captures and build output out of Git. Curated project evidence images under `public/work/` are intentionally versioned.
 
 Old /projects and /blog routes remain as canonicalized aliases. Old chapter hashes route to the corresponding new pages. Search Console ownership and sitemap submission are separate account actions; generating the sitemap does not submit it or guarantee indexing.

@@ -31,6 +31,8 @@ jobs:
         run: npm ci
       - name: Build static site
         run: npm run build
+      - name: Verify source quality
+        run: npm run lint && node scripts/check-imports.mjs --strict
       - name: Verify exported links and search metadata
         run: node scripts/check-export.mjs
       - name: Upload static site

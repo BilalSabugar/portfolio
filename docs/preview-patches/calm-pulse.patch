@@ -1,0 +1,30 @@
+diff --git a/app.json b/app.json
+index 532a483..8b26743 100644
+--- a/app.json
++++ b/app.json
+@@ -28,7 +28,7 @@
+     },
+     "web": {
+       "favicon": "./assets/favicon.png",
+-      "bundler": "metro"
++      "bundler": "webpack"
+     }
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/webpack.config.js b/webpack.config.js
+index e13ddd9..1167a98 100644
+--- a/webpack.config.js
++++ b/webpack.config.js
+@@ -2,7 +2,8 @@ const createExpoWebpackConfigAsync = require('@expo/webpack-config')
+ 
+ module.exports = async function (env, argv) {
+   const config = await createExpoWebpackConfigAsync(env, argv)
++  config.module.rules.push({ test: /node_modules[\\/]@react-navigation[\\/]elements[\\/]lib[\\/]module[\\/].*\.js$/, type: 'javascript/auto' })
+   config.resolve.alias['../Utilities/Platform'] =
+     'react-native-web/dist/exports/Platform'
+   return config
+-}
+\ No newline at end of file
++}

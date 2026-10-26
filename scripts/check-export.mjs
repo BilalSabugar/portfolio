@@ -31,6 +31,16 @@ for (const file of htmlFiles) {
   for (const [, json] of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) {
     try { JSON.parse(json); } catch { issues.push(`${relative}: invalid JSON-LD`); }
   }
+  for (const [, srcset] of html.matchAll(/srcset="([^"]+)"/gi)) {
+    for (const entry of srcset.split(",")) {
+      const target = entry.trim().split(/\s+/)[0];
+      if (target.startsWith("/") && !exists(target.slice(base.length))) issues.push(`${relative}: missing responsive image ${target}`);
+    }
+  }
+  for (const [, preview] of html.matchAll(/<meta (?:property="og:image"|name="twitter:image") content="([^"]+)"/g)) {
+    const target = new URL(preview).pathname;
+    if (!exists(target.slice(base.length))) issues.push(`${relative}: missing social preview ${target}`);
+  }
 }
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
@@ -39,6 +49,14 @@ for (const url of urls) {
   if (!exists(route)) issues.push(`sitemap: missing ${route}`);
 }
 if (urls.length !== 16) issues.push(`sitemap: expected 16 canonical URLs, found ${urls.length}`);
+for (const slug of ["portfolio", "novexa", "osrs", "roboscout", "wirk", "recoveros", "calm-pulse"]) {
+  const image = path.join(root, "share", `${slug}.png`);
+  if (!fs.existsSync(image)) { issues.push(`missing social image: ${slug}`); continue; }
+  const bytes = fs.readFileSync(image);
+  if (bytes.toString("hex", 0, 8) !== "89504e470d0a1a0a" || bytes.readUInt32BE(16) !== 1200 || bytes.readUInt32BE(20) !== 630) issues.push(`invalid social PNG dimensions: ${slug}`);
+}
+const resume = path.join(root, "bilal-sabugar-resume.pdf");
+if (!fs.existsSync(resume) || fs.readFileSync(resume).toString("ascii", 0, 4) !== "%PDF") issues.push("missing/invalid public resume PDF");
 const home = fs.readFileSync(path.join(root, "index.html"), "utf8");
 for (const intent of ["freelance", "hiring", "research", "company"]) {
   if (!home.includes(`${base}/contact/?intent=${intent}`)) issues.push(`home: missing ${intent} enquiry path`);

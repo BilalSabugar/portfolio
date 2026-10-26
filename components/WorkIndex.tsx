@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { WorkImage as Image } from "@/components/WorkImage";
 import { ArrowUpRight, Search } from "lucide-react";
 import { works, asset } from "@/lib/portfolio";
 
@@ -15,10 +15,10 @@ export function WorkIndex() {
     {["Robotics", "Software"].map(category => {
       const group = visible.filter(work => work.category === category);
       if (!group.length) return null;
-      return <section className="work-group" key={category} aria-label={`${category} projects`}><div className="work-group-intro"><h2>{category === "Robotics" ? "Machines & the systems behind them" : "Software for specific problems"}</h2><p>{category === "Robotics" ? "Team-built platforms: from physical structure to control, perception and experiments." : "Research, work and decision tools, with each project’s purpose and development stage kept clear."}</p></div><div className={`work-grid ${category === "Software" ? "work-grid-software" : ""}`}>{group.map(work => <article className={`work-entry work-entry-${work.slug}`} key={work.slug}>
+      return <section className="work-group" key={category} aria-label={`${category} projects`}><div className="work-group-intro"><h2>{category === "Robotics" ? "Machines & the systems behind them" : "Software for specific problems"}</h2><p>{category === "Robotics" ? "Team-built platforms: from physical structure to control, perception and experiments." : "Research, work and decision tools, with each project’s purpose and development stage kept clear."}</p></div><div className={`work-grid ${category === "Software" ? "work-grid-software" : ""}`}>{group.map(work => <article className={`work-entry work-entry-${work.slug} work-entry-${work.category.toLowerCase()}`} key={work.slug}>
       <Link className="work-entry-image-link" href={`/work/${work.slug}/`} aria-label={`Explore ${work.title}`}>
       <div className="work-entry-visual">{work.image ? <Image src={asset(work.image)} alt={work.imageAlt ?? work.title} fill sizes="(max-width: 760px) 100vw, 50vw" /> : <div className="software-title"><span>{work.category} / {work.number}</span><strong>{work.title}</strong><small>{work.stack.slice(0, 3).join(" / ")}</small></div>}<span className="work-entry-arrow"><ArrowUpRight size={24} /></span></div>
-      </Link><div className="work-entry-heading"><div><p className="eyebrow">{work.label}</p><h3><Link href={`/work/${work.slug}/`}>{work.title}</Link></h3></div><span>{work.number}</span></div><p>{work.summary}</p><dl className="work-preview-facts"><div><dt>My contribution</dt><dd>{work.contribution}</dd></div><div><dt>What you can inspect</dt><dd>{work.evidence}</dd></div></dl><div className="work-entry-bottom"><span>{work.status}</span><Link href={`/work/${work.slug}/`}>Read the case study<ArrowUpRight size={16} /></Link></div>
+      </Link>{work.previewLabel && <div className="work-preview-context">{work.previewLabel}</div>}<div className="work-entry-heading"><div><p className="eyebrow">{work.label}</p><h3><Link href={`/work/${work.slug}/`}>{work.title}</Link></h3></div><span>{work.number}</span></div><p>{work.summary}</p><dl className="work-preview-facts"><div><dt>My contribution</dt><dd>{work.contribution}</dd></div><div><dt>What you can inspect</dt><dd>{work.evidence}</dd></div></dl><div className="work-entry-bottom"><span>{work.status}</span><Link href={`/work/${work.slug}/`}>Read the case study<ArrowUpRight size={16} /></Link></div>
     </article>)}</div></section>;
     })}
     {visible.length === 0 && <div className="empty-results"><h2>No matching projects.</h2><p>Try a project name, a technology, or clear the filters.</p><button className="button-secondary" onClick={() => { setFilter("All"); setQuery(""); }}>Show all projects</button></div>}

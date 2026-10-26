@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import "./portfolio.css";
+const manrope = localFont({ src: "./fonts/manrope-latin.woff2", variable: "--font-manrope", weight: "400 700", display: "swap" });
+const dmMono = localFont({ src: [{ path: "./fonts/dm-mono-regular.woff2", weight: "400" }, { path: "./fonts/dm-mono-medium.woff2", weight: "500" }], variable: "--font-dm-mono", display: "swap", preload: false });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bilalsabugar.github.io/portfolio/"),
@@ -21,7 +24,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${manrope.variable} ${dmMono.variable}`}>
         {children}
       </body>
     </html>

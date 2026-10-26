@@ -56,7 +56,7 @@ Dark graphite and warm paper, copper accents, oversized restrained typography, l
 
 Language: specific, formal and understandable. Separate documented features, project goals and measured outcomes. AI-assisted development disclosures remain visible where the project source explicitly documents them. Personal addresses, location labels and private contact details are excluded.
 
-CV: optional. No approved CV exists in the checkout; offer a request link rather than inventing a document. A future public CV should exclude home address, date of birth, private references, signatures and confidential work. This is an editorial privacy recommendation, not legal advice. Company work is linked to existing public records; confidential materials need an explicit rights review before inclusion.
+CV: the review follow-through added an intentionally public one-page PDF, generated from verified project, education and research-experience facts. It excludes home address, date of birth, private references, signatures, confidential work and unverified internship dates. This is an editorial privacy recommendation, not legal advice. Company work is linked to existing public records; confidential materials need an explicit rights review before inclusion.
 
 ## Ranking and growth plan
 
@@ -76,7 +76,7 @@ Writing follows concise, scannable and objective web-content principles from [NN
 
 Four contact paths cover freelance projects, hiring or internships, research collaboration, and Aetheron Labs / investment conversations. The latter is an enquiry route, not a claim of an active funding round. Hiring guidance offers a CV on request; no unapproved public CV is introduced. Project-specific links preserve a reference in the draft. The visitor reviews and sends the message in their email application; the site is not an email-delivery service.
 
-No new customers, revenue, benchmark performance, qualifications or team responsibilities were invented for this pass. Existing source attribution and AI-assisted implementation disclosures remain in place.
+No new customers, revenue, benchmark performance, qualifications or team responsibilities were invented for the editorial refinement. Existing source attribution and AI-assisted implementation disclosures remain in place.
 
 ## Explain the system through interaction
 

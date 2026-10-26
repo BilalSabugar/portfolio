@@ -43,6 +43,8 @@ next-env.d.ts
 # local design and QA artifacts
 /audit-current/
 /qa-*
+/output/
+/tmp/
 /design-*
 /design-qa.md
 /portfolio-research.md

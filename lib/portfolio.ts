@@ -14,7 +14,7 @@ export type Work = {
   label: string; summary: string; question: string; role: string; context: string;
   contribution: string; evidence: string; takeaway: string;
   status: string; stack: string[]; repository: string; source: string;
-  image?: string; imageAlt?: string; imageCaption?: string;
+  image?: string; imageAlt?: string; imageCaption?: string; imageWidth?: number; imageHeight?: number; previewLabel?: string;
   decisions: { title: string; text: string }[];
   scope: string; outcome: string; disclosure?: string;
 };
@@ -33,7 +33,7 @@ export const works: Work[] = [
     status: "Experimental prototype", stack: ["Fusion 360", "3D printing", "Arduino Mega", "Inverse kinematics"],
     repository: "https://github.com/Labs-Aetheron/Novexa", source: "https://github.com/Labs-Aetheron/Novexa/blob/main/README.md",
     image: "/work/novexa-cad.png", imageAlt: "Source CAD render of the Novexa hexapod with six articulated legs",
-    imageCaption: "Novexa CAD render · Original project repository",
+    imageCaption: "Novexa CAD render · Original project repository", imageWidth: 1920, imageHeight: 873,
     decisions: [
       { title: "Make the structure modular", text: "The mechanical source includes printable body plates, servo mounts and leg components. A modular assembly allows parts to be fabricated and revised individually rather than rebuilding the whole platform." },
       { title: "Control foot position, then joint motion", text: "Each leg has three joints. The documented inverse-kinematics approach relates a target foot position to those joint angles, providing a basis for coordinating all six legs." },
@@ -47,15 +47,15 @@ export const works: Work[] = [
     label: "Robot control · Collaborative platform",
     summary: "A robotics platform that connects hardware, camera feedback, simulation and a live control dashboard for repeatable experiments.",
     contribution: "Platform engineering & online system identification",
-    evidence: "Source code · Experiment guides · Technical report",
+    evidence: "Source code · 20-trial SIL results · Technical report",
     takeaway: "A useful robotics experiment needs more than a controller: it needs connected hardware, visible data and a way to repeat the test.",
     question: "How do you connect an experiment, its hardware and the data needed to understand it?",
     role: "My credited responsibilities cover platform engineering, full-stack robotics and recursive least squares (RLS) identification—a method for estimating system behaviour from incoming data.",
-    context: "Core engineering team: Bilal Sabugar, Aditya Jadav and Archie Veera. The work connects robot hardware, perception modules and MuJoCo simulation through a common software platform.",
+    context: "Core engineering team: Bilal Sabugar, Aditya Jadav and Archie Veera. The ball-balancing work connects to our research internship at the IITGN Robotics Lab. OSRS brings hardware, perception and MuJoCo simulation into a common software platform.",
     status: "Open-source research platform", stack: ["Python", "FastAPI", "React", "MuJoCo", "OpenCV", "Dynamixel"],
     repository: "https://github.com/TeamOSRS/OSRS", source: "https://github.com/TeamOSRS/OSRS/blob/main/AUTHORS.md",
     image: "/work/osrs-architecture.png", imageAlt: "OSRS source architecture figure connecting camera and load-cell feedback to the controller, hardware and dashboard",
-    imageCaption: "Control and perception architecture · OSRS experiment documentation",
+    imageCaption: "Control and perception architecture · OSRS experiment documentation", imageWidth: 2000, imageHeight: 1561,
     decisions: [
       { title: "Keep hardware and experiments modular", text: "Robot, perception, research and simulation modules sit behind shared runtime services. This lets a new experiment reuse the command interface and telemetry instead of building a separate application." },
       { title: "Connect observation to control", text: "The ball-balancing work combines visual tracking and load-cell estimates with a control loop. Its research notes describe the progression from simulated cooperative arms to a physical dual-arm platform." },
@@ -77,6 +77,7 @@ export const works: Work[] = [
     context: "An independently maintained public software project connecting robotics requirements with source material and explicit calculations.",
     status: "Public software project", stack: ["Next.js", "TypeScript", "Prisma", "SQLite", "SerpApi"],
     repository: "https://github.com/BilalSabugar/RoboScout", source: "https://github.com/BilalSabugar/RoboScout/blob/master/ARCHITECTURE.md",
+    image: "/work/roboscout-screen.png", imageAlt: "Actual RoboScout static torque calculator showing inputs, calculated torque and engineering assumptions", imageCaption: "Actual local application · Static torque calculator with default inputs · Font fallback used in this capture", imageWidth: 1274, imageHeight: 717, previewLabel: "Actual application · Static torque calculator",
     decisions: [
       { title: "Keep calculations deterministic", text: "Static torque sizing and safety margins are calculated in TypeScript. Generative output is not used as the arithmetic engine for physical requirements." },
       { title: "Preserve the source of each claim", text: "Research records distinguish verified, reported, unknown and conflicting parameters. The intent is to keep a component recommendation connected to its underlying documentation." },
@@ -97,6 +98,7 @@ export const works: Work[] = [
     context: "WIRK's community edition runs in the browser. The public repository is the scope of this case study; separately advertised cloud services are not treated as demonstrated here.",
     status: "Open-source community edition", stack: ["React", "Vite", "Web Crypto", "Browser storage"],
     repository: "https://github.com/BilalSabugar/wirk-opensource", source: "https://github.com/BilalSabugar/wirk-opensource/blob/main/README.md",
+    image: "/work/wirk-screen.png", imageAlt: "Actual WIRK local workspace showing the starter task dashboard and focus controls", imageCaption: "Actual local-only workspace · Bundled starter data · Preview-only startup fixes; no cloud or AI service connected", imageWidth: 1280, imageHeight: 720, previewLabel: "Local-only preview · Bundled starter data",
     decisions: [
       { title: "Connect work stages", text: "A five-stage Kanban flow connects backlog, execution, review and completion. Focus sessions are associated with tasks so planning and time spent can be examined together." },
       { title: "Keep a useful local mode", text: "The community workflow uses browser storage and JSON import/export. Optional external integrations are distinct from the local task and reflection tools." },
@@ -116,6 +118,7 @@ export const works: Work[] = [
     context: "A software exploration of recovery decisions, deterministic policy enforcement and transaction-state verification. Evaluation uses synthetic payment failures.",
     status: "Simulation and test-mode prototype", stack: ["Python", "FastAPI", "React", "SQLAlchemy", "Razorpay test mode"],
     repository: "https://github.com/BilalSabugar/RECOVEROS", source: "https://github.com/BilalSabugar/RECOVEROS/blob/main/README.md",
+    image: "/work/recoveros-screen.png", imageAlt: "Actual RecoverOS command center running its built-in simulation with synthetic payment data, not real revenue", imageCaption: "Actual local application · Built-in synthetic simulation / test mode · Amounts shown are not real revenue", imageWidth: 1280, imageHeight: 720, previewLabel: "Simulation / test mode · Not real revenue",
     decisions: [
       { title: "Separate recommendation and permission", text: "A model-assisted decision layer proposes actions. A separate control layer checks policies, retry limits and other constraints before execution." },
       { title: "Verify before recording an outcome", text: "The documented ledger flow requires gateway confirmation. Predictions alone are not supposed to count as recovered money." },
@@ -135,6 +138,7 @@ export const works: Work[] = [
     context: "Team project with Sidharth Lama, Riyaan Sheth and Nandani Singh. Developed as a prototype in September 2025.",
     status: "Team-built prototype", stack: ["React Native", "Expo", "Gemini", "AsyncStorage"],
     repository: "https://github.com/BilalSabugar/CalmPulseGenAI", source: "https://github.com/BilalSabugar/CalmPulseGenAI/blob/main/README.md",
+    image: "/work/calm-pulse-screen.png", imageAlt: "Actual Calm Pulse web prototype welcome screen with its static sample conversation and entry form", imageCaption: "Actual web prototype · Static sample conversation, not a live AI response · Preview bundler compatibility fixes", imageWidth: 1440, imageHeight: 1000, previewLabel: "Web prototype · Static sample conversation",
     decisions: [
       { title: "Support common daily activities", text: "The prototype brings together mood and sleep logging, journaling, breathing exercises and meditation timers rather than relying only on conversational AI." },
       { title: "Use a shared cross-platform foundation", text: "React Native and Expo provide the application structure. AsyncStorage supports on-device records while the chat capability connects to Gemini." },

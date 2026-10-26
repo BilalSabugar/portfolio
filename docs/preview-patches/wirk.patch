@@ -1,0 +1,78 @@
+diff --git a/src/App.jsx b/src/App.jsx
+index 81a27fb..b2ef7a5 100644
+--- a/src/App.jsx
++++ b/src/App.jsx
+@@ -402,18 +402,18 @@ export default function App() {
+   // Boot timer
+   useEffect(() => {
+     const t = setTimeout(() => {
+-      if (!auth.currentUser) setPhase(p => p === 'BOOT' ? 'AUTH' : p);
++      if (!auth?.currentUser) setPhase(p => p === 'BOOT' ? 'AUTH' : p);
+     }, BOOT_LEN * 280 + 500);
+     return () => clearTimeout(t);
+   }, []);
+ 
+   // Auth
+-  useEffect(() => onAuthStateChanged(auth, u => {
++  useEffect(() => auth ? onAuthStateChanged(auth, u => {
+     setUser(u);
+     setPhase(u ? 'APP' : 'AUTH');
+     if (!u) setAuthStage('LANDING');
+     if (u) encInit(u.uid);
+-  }), []);
++  }) : undefined, []);
+ 
+   // Global keyboard shortcuts
+   useEffect(() => {
+@@ -476,6 +476,7 @@ export default function App() {
+     if (authStage === 'LANDING') {
+       return (
+         <LandingPage
++          onEnterLocalMode={enterLocalMode}
+           onOpenAuth={(mode) => {
+             setAuthInitialMode(mode || 'LOGIN');
+             setAuthStage('AUTH');
+@@ -489,6 +490,7 @@ export default function App() {
+     return (
+       <AuthScreen
+         initialMode={authInitialMode}
++        onEnterLocalMode={enterLocalMode}
+         onBackToLanding={() => setAuthStage('LANDING')}
+         onSuccess={() => setPhase('APP')}
+       />
+diff --git a/src/components/AuthScreen.jsx b/src/components/AuthScreen.jsx
+index 5f72db9..fb1ec0d 100644
+--- a/src/components/AuthScreen.jsx
++++ b/src/components/AuthScreen.jsx
+@@ -30,6 +30,7 @@ function calculatePasswordStrength(pass) {
+ }
+ 
+ export default function AuthScreen({ 
++  onEnterLocalMode,
+   initialMode = 'LOGIN', 
+   onBackToLanding, 
+   onSuccess 
+diff --git a/src/components/LandingPage.jsx b/src/components/LandingPage.jsx
+index 5acfb02..3cbf58f 100644
+--- a/src/components/LandingPage.jsx
++++ b/src/components/LandingPage.jsx
+@@ -8,6 +8,7 @@ import {
+ } from 'lucide-react';
+ import LegalView from '../views/Legal';
+ import ForgeLogo from './ForgeLogo';
++import WirkLogo from './WirkLogo';
+ import UpgradeModal from './UpgradeModal';
+ import ProductivityGuidesModal from './ProductivityGuidesModal';
+ 
+diff --git a/src/components/Sidebar.jsx b/src/components/Sidebar.jsx
+index 27325af..e109dc5 100644
+--- a/src/components/Sidebar.jsx
++++ b/src/components/Sidebar.jsx
+@@ -6,6 +6,7 @@ import {
+ } from 'lucide-react';
+ import { auth } from '../firebase';
+ import ForgeLogo from './ForgeLogo';
++import WirkLogo from './WirkLogo';
+ import AriaLogo from './AriaLogo';
+ 
+ const ICON_MAP = {

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { WorkImage as Image } from "@/components/WorkImage";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, ArrowRight } from "lucide-react";
 import { PortfolioShell, TextLink } from "@/components/PortfolioShell";
@@ -6,6 +6,7 @@ import { WorkExhibit } from "@/components/WorkExhibit";
 import { asset, links, research, services, siteUrl } from "@/lib/portfolio";
 import { JsonLd, pageMetadata } from "@/lib/seo";
 import { contactIntents } from "@/lib/contact";
+import { resumePath } from "@/lib/profile";
 
 export const metadata = { ...pageMetadata("Robotics & Product Engineering", "Robotics, control systems and software by Bilal Sabugar, co-founder and CTO of Aetheron Labs. Explore Novexa, OSRS, open-source projects and research.", "/"), title: { absolute: "Bilal Sabugar — Robotics & Product Engineering" } };
 
@@ -16,7 +17,7 @@ export default function Home() {
       <div className="home-intro"><p className="eyebrow"><span className="status-dot" />Bilal Sabugar / Robotics & software</p><h1>I build robots.<br />And the software<br /><em>behind them.</em></h1><p className="home-description">I work on mechanical design, robot control and engineering software. I’m the co-founder and CTO of Aetheron Labs, and a B.Tech student in AI & Robotics at ATLAS SkillTech University.</p><div className="home-actions"><Link className="button-primary" href="/work/">Explore my work<ArrowUpRight size={18} /></Link><Link className="quiet-link" href="/contact/">Work with me<ArrowRight size={16} /></Link></div><a className="scroll-cue" href="#selected-work"><ArrowDown size={16} />From prototype to software</a></div>
       <WorkExhibit />
     </section>
-    <div className="context-strip"><Link href="/company/"><span>Building with a team</span><strong>Co-founder & CTO · Aetheron Labs<ArrowUpRight size={15} /></strong></Link><Link href="/research/"><span>Documenting the work</span><strong>Published research & technical reports<ArrowUpRight size={15} /></strong></Link><a href={links.github} target="_blank" rel="noreferrer"><span>Open to inspection</span><strong>Code, CAD & development records<ArrowUpRight size={15} /></strong></a></div>
+    <div className="context-strip"><Link href="/company/"><span>Company building</span><strong>Co-founder & CTO · Aetheron Labs<ArrowUpRight size={15} /></strong></Link><Link href="/about/#research-experience"><span>Research experience</span><strong>IIT Gandhinagar · Robotics Lab internship<ArrowUpRight size={15} /></strong></Link><a href={asset(resumePath)} download><span>Public résumé</span><strong>Download one-page CV (PDF)<ArrowDown size={15} /></strong></a></div>
     <section className="selected-work section-space" id="selected-work"><div className="section-heading"><div><p className="eyebrow">01 / Selected work</p><h2>Design the machine.<br />Connect the system.</h2></div><p>These projects show three parts of my work: building a physical robot, connecting experiments to software, and making engineering research easier to review.</p></div>
       <Link href="/work/novexa/" className="feature-story"><div className="feature-photo"><Image src={asset("/work/novexa-front.jpg")} alt="Actual Novexa prototype with exposed control electronics and six printed legs" fill sizes="(max-width: 760px) 100vw, 60vw" /><span>From the workshop / Novexa</span></div><div className="feature-story-copy"><p className="eyebrow">Robotics / Aetheron Labs & team</p><h3>Six legs.<br />Eighteen joints.<br />One machine.</h3><p>Novexa connects a modular printed structure with coordinated leg control. Explore the CAD, the physical prototype and the paper behind it.</p><span className="text-link">Inside Novexa<ArrowUpRight size={20} /></span></div></Link>
       <div className="paired-stories"><Link href="/work/osrs/"><p className="eyebrow">02 / Control & perception</p><h3>OSRS<ArrowUpRight /></h3><p>The platform around the experiment: hardware interfaces, simulation, control and telemetry.</p><span className="story-category">Collaborative robotics platform</span></Link><Link href="/work/roboscout/"><p className="eyebrow">03 / Engineering software</p><h3>RoboScout<ArrowUpRight /></h3><p>Trace requirements through component research, deterministic calculations and engineering reports.</p><span className="story-category">Independent open-source project</span></Link></div><TextLink href="/work/">View all six project records</TextLink>
