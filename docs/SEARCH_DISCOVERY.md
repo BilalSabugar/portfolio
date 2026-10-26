@@ -10,7 +10,7 @@
 
 ## Owner access needed: Google Search Console
 
-No Search Console connector or verified property access is available in this chat. Nothing has been submitted or connected on the owner's behalf.
+Direct browser access was checked on 26 October 2026: Search Console leads to Google's sign-in page. No authenticated ownership session or verification token is available. Nothing has been submitted or connected on the owner's behalf.
 
 1. Open https://search.google.com/search-console/ with the Google account that should own the property.
 2. Add a **URL-prefix** property for `https://bilalsabugar.github.io/portfolio/`. A domain property is not appropriate for this shared GitHub Pages host unless the owner controls a separate custom domain and its DNS.

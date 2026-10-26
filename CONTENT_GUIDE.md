@@ -10,6 +10,7 @@ This is a Next.js static export deployed to GitHub Pages. Changes to main trigge
 - `components/WorkExhibit.tsx`: interactive homepage evidence views.
 - `lib/walkthroughs.ts`: source-grounded Novexa and OSRS system walkthroughs; `components/SystemWalkthrough.tsx` handles stage selection and keyboard navigation.
 - `lib/contact.ts`: hiring, freelance, research and company enquiry guidance.
+- `lib/profile.ts`: CV-sourced internship dates and grouped training records. `components/CourseworkProject.tsx` presents the separate T.H.O.M.A.S. coursework summary.
 - `app/portfolio.css`: current visual system. `app/globals.css` retains the base styles, native scrollbar and retired-URL notice.
 - `lib/seo.tsx`, `app/sitemap.ts`: page metadata, structured data and the XML sitemap.
 - `docs/PORTFOLIO_STRATEGY.md`: research, source register, architectural decisions and search strategy.
@@ -24,7 +25,7 @@ Company programs stay under Aetheron Labs. A detailed company-related case study
 
 Add a research record to `research`. Distinguish journal articles, preprints and repository reports. Use the exact source title, list collaborators, and do not claim peer review or a DOI without evidence. Course certificates belong in the credentials page, not as duplicate publications.
 
-The current Robot Kinematics record comes from the public LinkedIn listing, including its listed expiry. No original certificate scan is available in this checkout. Additional awards or credentials need supporting material before inclusion.
+The Robot Kinematics record comes from the public LinkedIn listing, including its listed expiry. Four additional training records come from the owner's October 2026 CV and are labelled accordingly. Do not silently merge the similarly named workshop and LinkedIn course. No original certificate scan is available in this checkout; no independent issuer verification is claimed.
 
 ## Media
 

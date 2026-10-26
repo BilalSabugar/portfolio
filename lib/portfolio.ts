@@ -29,7 +29,7 @@ export const works: Work[] = [
     takeaway: "Taking a robot from CAD to a physical assembly means designing around the parts, joints and wiring that must work together.",
     question: "How do you make eighteen joints work as one machine?",
     role: "I contributed to the mechanical design, structural fabrication and mechatronic integration: the work connecting the printed structure, actuators and electronics into one assembly.",
-    context: "Developed with Aditya Jadav, Archie Veera and Rabinder Henry, with ATLAS SkillTech University laboratory resources. The open project is now hosted by Aetheron Labs.",
+    context: "Developed from September to December 2025 with Aditya Jadav, Archie Veera and Rabinder Henry, with ATLAS SkillTech University laboratory resources. This predates Aetheron Labs; the open project is now hosted by the company.",
     status: "Experimental prototype", stack: ["Fusion 360", "3D printing", "Arduino Mega", "Inverse kinematics"],
     repository: "https://github.com/Labs-Aetheron/Novexa", source: "https://github.com/Labs-Aetheron/Novexa/blob/main/README.md",
     image: "/work/novexa-cad.png", imageAlt: "Source CAD render of the Novexa hexapod with six articulated legs",
@@ -51,7 +51,7 @@ export const works: Work[] = [
     takeaway: "A useful robotics experiment needs more than a controller: it needs connected hardware, visible data and a way to repeat the test.",
     question: "How do you connect an experiment, its hardware and the data needed to understand it?",
     role: "My credited responsibilities cover platform engineering, full-stack robotics and recursive least squares (RLS) identification—a method for estimating system behaviour from incoming data.",
-    context: "Core engineering team: Bilal Sabugar, Aditya Jadav and Archie Veera. The ball-balancing work connects to our research internship at the IITGN Robotics Lab. OSRS brings hardware, perception and MuJoCo simulation into a common software platform.",
+    context: "Core engineering team: Bilal Sabugar, Aditya Jadav and Archie Veera. My June–July 2026 research internship at the IITGN Robotics Lab included the ball-balancing work. OSRS brings hardware, perception and MuJoCo simulation into a common software platform.",
     status: "Open-source research platform", stack: ["Python", "FastAPI", "React", "MuJoCo", "OpenCV", "Dynamixel"],
     repository: "https://github.com/TeamOSRS/OSRS", source: "https://github.com/TeamOSRS/OSRS/blob/main/AUTHORS.md",
     image: "/work/osrs-architecture.png", imageAlt: "OSRS source architecture figure connecting camera and load-cell feedback to the controller, hardware and dashboard",
@@ -155,11 +155,10 @@ export const research = [
 ] as const;
 
 export const programs = [
-  { title: "S.L.A.B.", description: "Indoor material handling. The current prototype is remotely operated; autonomous operation is a development goal.", status: "V1 prototype · V2 development", href: "https://www.aetheronlabs.in/programs/slab/" },
-  { title: "Novexa", description: "Open hexapod research platform with CAD, fabrication files and a published paper.", status: "Experimental platform", href: "/work/novexa/" },
-  { title: "Raven", description: "Company research program for aerial inspection.", status: "Research", href: "https://www.aetheronlabs.in/programs/raven/" },
-  { title: "VIER", description: "Company program exploring robotics for intravenous training.", status: "Research and development", href: "https://www.aetheronlabs.in/programs/vier/" },
-  { title: "T.H.O.M.A.S.", description: "Company research program focused on robot learning.", status: "Research", href: "https://www.aetheronlabs.in/programs/thomas/" },
+  { title: "S.L.A.B.", description: "Shelf Loading Autonomous Bot: a material-handling platform. V1 has app-controlled movement and lifting; it is not presented as an autonomous deployed system.", contribution: "I co-developed V1, contributing to software, embedded electronics and hardware integration.", next: "V2 development targets omnidirectional movement, robotic gripping, autonomous navigation and docking.", status: "Working V1 prototype · V2 in development", href: "https://www.aetheronlabs.in/programs/slab/" },
+  { title: "Novexa", description: "An 18-joint hexapod with original CAD, fabrication files, a physical prototype and a published paper. Built in 2025 before the company; its open repository is now hosted by Aetheron Labs.", contribution: "My work covered mechanical design, fabrication and mechatronic integration within the team.", next: "Further autonomy is roadmap work, not an independently verified result.", status: "Experimental platform · Open project", href: "/work/novexa/" },
+  { title: "Raven", description: "A drone-based intrusion-detection concept with a master hexacopter and six modular tricopters.", contribution: "My current work focuses on system design, docking mechanisms, mission coordination and simulation.", next: "Sector exploration, intrusion alerts, return and docking are planned capabilities; an operational drone swarm is not claimed.", status: "System design & simulation", href: "https://www.aetheronlabs.in/programs/raven/" },
+  { title: "VIER", description: "A robotic system for intravenous-procedure training on a phantom, combining a 5-DOF arm and a 1-DOF forearm support. This is a training platform, not a clinically validated treatment device.", contribution: "I am developing the platform and integrating stepper motors, magnetic encoders and embedded control.", next: "Inverse-kinematics-based motion, closed-loop positioning and movement recording for trainee assessment are planned capabilities.", status: "Prototype development", href: "https://www.aetheronlabs.in/programs/vier/" },
 ] as const;
 
 export const repositoryArchive = [

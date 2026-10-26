@@ -58,6 +58,22 @@ for (const slug of ["portfolio", "novexa", "osrs", "roboscout", "wirk", "recover
 const resume = path.join(root, "bilal-sabugar-resume.pdf");
 if (!fs.existsSync(resume) || fs.readFileSync(resume).toString("ascii", 0, 4) !== "%PDF") issues.push("missing/invalid public resume PDF");
 const home = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const about = fs.readFileSync(path.join(root, "about", "index.html"), "utf8");
+const company = fs.readFileSync(path.join(root, "company", "index.html"), "utf8");
+const training = fs.readFileSync(path.join(root, "certificates", "index.html"), "utf8");
+const workIndex = fs.readFileSync(path.join(root, "work", "index.html"), "utf8");
+for (const marker of ["June–July 2026", "May 2026–present", "Artificial Intelligence &amp; Robotics"]) {
+  if (!about.includes(marker)) issues.push(`about: missing CV alignment: ${marker}`);
+}
+for (const marker of ["Robotic Arm Control", "Advanced Drone Technology", "AI &amp; Robotics Summer School", "Winter Internship Technical Training", "owner-reported"]) {
+  if (!training.includes(marker)) issues.push(`training: missing record/context: ${marker}`);
+}
+for (const marker of ["S.L.A.B.", "Raven", "VIER", "My work", "Next / planned"]) {
+  if (!company.includes(marker)) issues.push(`company: missing program context: ${marker}`);
+}
+for (const marker of ['id="coursework"', "T.H.O.M.A.S.", "Q-learning", "No physical maze-solving result"]) {
+  if (!workIndex.includes(marker)) issues.push(`work: missing coursework context: ${marker}`);
+}
 for (const intent of ["freelance", "hiring", "research", "company"]) {
   if (!home.includes(`${base}/contact/?intent=${intent}`)) issues.push(`home: missing ${intent} enquiry path`);
 }

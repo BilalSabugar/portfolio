@@ -11,7 +11,7 @@ export function WorkIndex() {
   const visible = works.filter(work => (filter === "All" || work.category === filter) && `${work.title} ${work.summary} ${work.contribution} ${work.stack.join(" ")} ${work.label}`.toLowerCase().includes(query.trim().toLowerCase()));
   return <>
     <div className="work-controls"><div role="group" aria-label="Filter projects">{["All", "Robotics", "Software"].map(name => <button key={name} aria-pressed={filter === name} onClick={() => setFilter(name)}>{name}<span>{name === "All" ? works.length : works.filter(work => work.category === name).length}</span></button>)}</div><label className="work-search"><Search size={17} /><input type="search" aria-label="Search projects" placeholder="Search projects or technologies" value={query} onChange={event => setQuery(event.target.value)} /></label></div>
-    <p className="results-count" role="status">{visible.length} {visible.length === 1 ? "project" : "projects"}</p>
+    <p className="results-count" role="status">{visible.length} {visible.length === 1 ? "case study" : "case studies"}</p>
     {["Robotics", "Software"].map(category => {
       const group = visible.filter(work => work.category === category);
       if (!group.length) return null;

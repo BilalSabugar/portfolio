@@ -30,7 +30,15 @@ Original captures are under `public/work/*-screen.png`, with delivery-only WebP 
 
 ## Owner-only follow-through
 
-Search Console ownership/submission and external profile backlinks are not completed. No corresponding connected-account write capability is available here. See `docs/SEARCH_DISCOVERY.md`. Exact internship dates and supervisor details need owner confirmation before adding them to the CV or timeline.
+Search Console ownership/submission and external profile backlinks are not completed. A direct browser check reached Google sign-in. See `docs/SEARCH_DISCOVERY.md`. The supplied CV now establishes the owner-reported internship period as June–July 2026; no formal supervisor assignment is inferred.
+
+## CV content alignment
+
+- About and the research section now use the CV's role, internship period, technical responsibilities, degree wording and May 2026 company-role start. Earlier school records are concise; home city, phone and date of birth are not repeated in page copy.
+- Four CV training records are grouped as workshops and programs. Participation is owner-reported; the separate LinkedIn kinematics record is not silently merged with the similarly named workshop. No original certificate scan or issuer verification is claimed.
+- S.L.A.B., Raven and VIER remain company-context programs, with personal contribution, current stage and planned capabilities separated. Novexa's 2025 origin predates the company and is stated explicitly.
+- T.H.O.M.A.S. is a separate coursework summary on Work, not an invented image-led case study. It distinguishes Q-learning/MuJoCo work from the move toward physical hardware. No measured success rate is asserted.
+- GitHub recursive trees for Labs-Aetheron/Novexa and TeamOSRS/OSRS were checked on 26 October 2026. No committed MP4/WebM/MOV/GIF demo was found. OSRS's CSVs remain explicitly simulation evidence. This does not establish whether a video exists elsewhere.
 
 ## Verification results
 

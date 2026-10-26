@@ -1,5 +1,17 @@
 # Rebuild verification — 26 October 2026
 
+## CV-alignment pass — 26 October 2026
+
+Story: a visitor reads the updated background, training, company or coursework record, inspects its CV/source context and reaches the matching enquiry without submitting data to a backend.
+
+- Build and TypeScript passed. Export checks passed for 22 public HTML pages and 16 canonical sitemap URLs, including new assertions for internship/company dates, four training records, company contribution/planned-work labels and coursework scope. Static imports report 42 reachable modules and no unreachable modules; targeted ESLint passed.
+- About now reflects the CV's June–July 2026 internship, degree wording and May 2026 company-role start. The CV itself is unchanged. Dates are owner-supplied facts, not independent institutional verification; no supervisor assignment was inferred.
+- Browser: About → training navigation passed. Four training records rendered under two groups. At 390 px, training and company document widths were 378 px; coursework Work at 320 px was 308 px. No horizontal page overflow was measured in those states.
+- Company page rendered four programs with contribution and next/planned sections. Its enquiry link selected the company radio option. Work's coursework jump reached #coursework; the robot-learning enquiry selected research. All contact actions remained local draft preparation; no email was sent.
+- The official S.L.A.B., Raven and VIER program URLs each returned HTTP 200. Novexa and OSRS GitHub trees contained no committed MP4/WebM/MOV/GIF demo in the checked tree. Existing CSV simulation evidence remains separate from physical test results; no new physical measurement or demonstration was invented.
+- Search Console opened Google's sign-in screen, so ownership verification, sitemap submission and index coverage remain unverified. No credentials, property token or profile settings were changed. The sitemap and page metadata remain available for owner follow-through.
+- React quality review: new content is server-rendered, stable keys and labelled sections are used, no new effects/client fetching or libraries were introduced, and the existing responsive/reduced-motion system is retained.
+
 Historical verification record. Temporary screenshots, Lighthouse JSON reports, isolated app checkouts and the superseded generated CV were deleted during the owner's requested cleanup. The results below record earlier checks; current source imagery, the owner-supplied CV and preview reproduction patches remain versioned. Previously tracked retired files can be recovered from Git history; deleted untracked QA artifacts have no repository recovery copy.
 
 ## User journey
