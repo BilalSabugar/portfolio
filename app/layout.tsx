@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: { default: "Bilal Sabugar — Robotics & Product Engineering", template: "%s | Bilal Sabugar" },
   description: "Portfolio of Bilal Sabugar: robotics, embedded systems, applied AI, research and product engineering.",
   robots: { index: true, follow: true },
+  verification: { google: "9T18Mdf2sGcBAUOjc7mhaQUsEwsAYIfQE07CT7Kh3fI" },
   icons: { icon: [{ url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/brand-icon.png`, type: "image/png", sizes: "64x64" }] },
   openGraph: {
     type: "website",

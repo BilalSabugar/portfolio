@@ -17,6 +17,11 @@ const exists = pathname => {
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
   const relative = path.relative(root, file).replaceAll("\\", "/");
+  // Google's ownership file is a literal token, not an application HTML page.
+  if (relative === "google44b86cf86f16f1fb.html") {
+    if (html.trim() !== "google-site-verification: google44b86cf86f16f1fb.html") issues.push("invalid Google ownership verification file");
+    continue;
+  }
   if (relative.startsWith("admin/")) continue;
   pages++;
   if ((html.match(/<h1(?:\s|>)/g) ?? []).length !== 1) issues.push(`${relative}: expected one h1`);
@@ -58,6 +63,8 @@ for (const slug of ["portfolio", "novexa", "osrs", "roboscout", "wirk", "recover
 const resume = path.join(root, "bilal-sabugar-resume.pdf");
 if (!fs.existsSync(resume) || fs.readFileSync(resume).toString("ascii", 0, 4) !== "%PDF") issues.push("missing/invalid public resume PDF");
 const home = fs.readFileSync(path.join(root, "index.html"), "utf8");
+if (!home.includes('<meta name="google-site-verification" content="9T18Mdf2sGcBAUOjc7mhaQUsEwsAYIfQE07CT7Kh3fI"')) issues.push("home: missing Google ownership meta tag");
+if (!fs.existsSync(path.join(root, "google44b86cf86f16f1fb.html"))) issues.push("missing Google ownership verification file");
 const about = fs.readFileSync(path.join(root, "about", "index.html"), "utf8");
 const company = fs.readFileSync(path.join(root, "company", "index.html"), "utf8");
 const training = fs.readFileSync(path.join(root, "certificates", "index.html"), "utf8");
