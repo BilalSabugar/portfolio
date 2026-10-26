@@ -30,7 +30,7 @@ The current Robot Kinematics record comes from the public LinkedIn listing, incl
 
 `public/work/` contains real Novexa repository imagery and OSRS research figures. The Novexa CAD viewer loads the original 19 MB source STL only after a visitor opts in. It is a design viewer, not a movement simulation. Do not replace it with a generated imitation and describe that as original CAD.
 
-Generated night-lab imagery and unused components were removed from the current source/public assets. Git history retains them; the current checkout also has an ignored `qa-retired-assets/` recovery folder. Genuine software screenshots are versioned in `public/work/`; their source commits and preview compatibility changes are documented in `docs/REVIEW_FOLLOW_THROUGH.md`.
+Generated night-lab imagery and unused components were removed from the current source/public assets. Git history retains previously tracked files; temporary recovery folders, QA captures and source-app checkouts have been deleted. Genuine software screenshots are versioned in `public/work/`; their source commits and preview compatibility changes are documented in `docs/REVIEW_FOLLOW_THROUGH.md`.
 
 ## Contact and CV
 

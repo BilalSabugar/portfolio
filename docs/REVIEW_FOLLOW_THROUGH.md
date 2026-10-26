@@ -8,7 +8,7 @@
 
 ## Software capture provenance
 
-All screenshots are browser captures of the user's original repositories running locally, not generated mockups. No API keys, real payment credentials or personal workspace data were used. Temporary app checkouts, installations and compatibility patches are under ignored `qa-apps/`; none of those application repositories was pushed or modified remotely.
+All screenshots are browser captures of the user's original repositories running locally, not generated mockups. No API keys, real payment credentials or personal workspace data were used. Temporary app checkouts and installations have been deleted during repository cleanup. Compatibility patches are retained in `docs/preview-patches/`; none of those application repositories was pushed or modified remotely.
 
 | Project | Source commit | Captured state | Local compatibility changes / limits |
 | --- | --- | --- | --- |
@@ -24,7 +24,7 @@ Original captures are under `public/work/*-screen.png`, with delivery-only WebP 
 - Dedicated 1200x630 portfolio preview and six project-specific PNG cards; corresponding Open Graph and Twitter metadata.
 - Contact messages prepare on the page first, then offer open-email and copy-message choices. No message is sent by the website.
 - Self-hosted Manrope and DM Mono with SIL licence notices. Responsive WebP delivery preserves unchanged source images.
-- Removed 20 unreachable legacy source modules, retired the non-connected browser-editor page implementations, and removed unused dependency declarations. Eight unused public assets were moved to ignored `qa-retired-assets/`; prior commits remain recoverable.
+- Removed 20 unreachable legacy source modules, retired the non-connected browser-editor page implementations, and removed unused dependency declarations. Eight unused public assets were initially moved to an ignored recovery folder, since deleted during cleanup; previously tracked files remain recoverable from Git history.
 - Import reachability checker reports no unreachable modules in app/components/lib. This is a static import check, not a guarantee about arbitrary runtime code generation.
 - Added a non-destructive Windows export normalisation step for the [upstream RSC segment filename issue](https://github.com/vercel/next.js/issues/85374). Linux CI remains the authoritative deployment build.
 

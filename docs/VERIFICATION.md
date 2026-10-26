@@ -1,5 +1,7 @@
 # Rebuild verification — 26 October 2026
 
+Historical verification record. Temporary screenshots, Lighthouse JSON reports, isolated app checkouts and the superseded generated CV were deleted during the owner's requested cleanup. The results below record earlier checks; current source imagery, the owner-supplied CV and preview reproduction patches remain versioned. Previously tracked retired files can be recovered from Git history; deleted untracked QA artifacts have no repository recovery copy.
+
 ## User journey
 
 Identify Bilal's engineering focus, inspect a substantive project, understand contribution and source evidence, then find a professional contact route.
