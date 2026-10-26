@@ -1,5 +1,12 @@
 # Rebuild verification — 26 October 2026
 
+## Prepare-message feedback fix
+
+- Reproduced on the public contact page: empty fields invoked native validation without persistent inline feedback; no JavaScript error was logged. A valid form created the draft below the button without moving focus to it. No email was sent.
+- Added explicit required-name/email/trimmed-20-character-message validation, inline messages linked by aria-describedby, invalid-field styling, an alert summary and first-invalid-field focus. The message-length requirement is visible before submitting.
+- Valid preparation now focuses and scrolls to the labelled draft region, including repeated clicks. Editing form fields or removing the project reference invalidates the old draft. The website still only prepares mailto/copy content locally; it has no email-sending API.
+- Production build/TypeScript, export checks and targeted ESLint passed. Browser tests covered empty fields, malformed email, short message, valid input with a project reference and ampersand, repeated preparation and successful clipboard feedback. At 390 px, document width was 378 px and the draft received focus within the viewport. External email-app launch/delivery was not executed.
+
 ## CV-alignment pass — 26 October 2026
 
 Story: a visitor reads the updated background, training, company or coursework record, inspects its CV/source context and reaches the matching enquiry without submitting data to a backend.

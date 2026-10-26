@@ -462,7 +462,11 @@ html { scroll-behavior:smooth; scroll-padding-top:110px; }
 .enquiry-reference { font-size:13px!important; display:flex; flex-wrap:wrap; gap:15px; }
 .enquiry-reference button { color:var(--accent); background:none; border:0; text-decoration:underline; padding:0 4px; }
 .enquiry-form .brief-guidance { font-size:14px; line-height:1.7; max-width:58ch; }
-.prepared-draft { margin-top:24px; border:1px solid var(--hairline); padding:20px; }
+.prepared-draft { margin-top:24px; border:1px solid var(--hairline); padding:20px; scroll-margin-top:120px; }
+.prepared-draft h2 { font-size:28px; margin:0 0 16px; }
+.enquiry-form input[aria-invalid="true"],.enquiry-form textarea[aria-invalid="true"] { border-color:#ffb5a0; }
+.enquiry-form label > .field-error,.form-error-summary { color:#ffb5a0; font-size:13px; line-height:1.7; }
+.form-error-summary { margin:0; padding:12px 16px; border-left:2px solid currentColor; background:#ffb5a009; }
 .prepared-draft p { color:var(--subtle); line-height:1.7; font-size:14px; }
 .prepared-draft label { display:block; font-size:13px; }
 .prepared-draft textarea { display:block; width:100%; margin:12px 0 18px; background:var(--surface); border:1px solid var(--hairline); color:var(--paper); padding:12px; font-size:15px; line-height:1.7; resize:vertical; }
